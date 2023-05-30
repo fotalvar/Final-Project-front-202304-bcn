@@ -24,6 +24,10 @@ a {
   color: inherit;
 }
 
+body {
+  background-color: ${(props) => props.theme.colors.primaryDark};
+}
+
 img {
   max-width: 100%;
 }
