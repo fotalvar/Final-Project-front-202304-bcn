@@ -1,6 +1,15 @@
+import HeaderStyled from "./HeaderStyles";
+
 const Header = (): React.ReactElement => {
   return (
-    <img src="images/logo.svg" alt="Teams Imapct logo" width="85" height="45" />
+    <HeaderStyled>
+      <img
+        src="images/logo.svg"
+        alt="Teams Impact logo"
+        width="85"
+        height="45"
+      />
+    </HeaderStyled>
   );
 };
 
