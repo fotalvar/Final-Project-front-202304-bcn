@@ -8,12 +8,22 @@ const Nav = (): React.ReactElement => {
       <ul className="nav">
         <li className="nav__item">
           <NavLink to="/home">
-            <img src="icons/home.svg" alt="Home page" width="30" height="30" />
+            <img
+              src="../images/icons/home.svg"
+              alt="Home page"
+              width="30"
+              height="30"
+            />
           </NavLink>
         </li>
         <li className="nav__item">
           <NavLink to="/logout">
-            <img src="icons/logout.svg" alt="Log out" width="30" height="30" />
+            <img
+              src="../images/icons/logout.svg"
+              alt="Log out"
+              width="30"
+              height="30"
+            />
           </NavLink>
         </li>
       </ul>
