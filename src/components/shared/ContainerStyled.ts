@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const ContainerStyled = styled.div`
-  padding: 20px;
   margin: 0 auto;
-  min-height: 100vh;
+  align-items: center;
+  min-width: 320px;
+  max-width: 900px;
 `;
 
 export default ContainerStyled;
