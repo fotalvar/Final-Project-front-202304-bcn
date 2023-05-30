@@ -10,18 +10,20 @@ const LoginForm = (): React.ReactElement => {
         height="95"
       />
       <input
-        className="login-form__user"
+        className="login-form__controller"
         type="text"
         placeholder="Username"
         id="username"
-      ></input>
+      />
       <input
-        className="login-form__password"
+        className="login-form__controller"
         type="password"
         placeholder="Password"
         id="password"
-      ></input>
-      <button className="login-form__button">login</button>
+      />
+      <button className="login-form__button" type="submit">
+        login
+      </button>
     </LoginFormStyled>
   );
 };

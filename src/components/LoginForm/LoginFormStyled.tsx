@@ -9,8 +9,7 @@ const LoginFormStyled = styled.form`
   gap: 30px;
 
   .login-form {
-    &__user,
-    &__password {
+    &__controller {
       background: #ffffff;
       border-radius: 10px;
       border: none;
