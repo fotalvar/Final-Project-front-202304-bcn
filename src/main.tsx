@@ -4,13 +4,14 @@ import "./index.css";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme/theme";
-import App from "./components/App/App";
+import { RouterProvider } from "react-router-dom";
+import appRouter from "./routers/appRouter";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <App />
+      <RouterProvider router={appRouter} />
     </ThemeProvider>
   </React.StrictMode>
 );

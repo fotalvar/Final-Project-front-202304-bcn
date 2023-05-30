@@ -14,6 +14,7 @@ const HeaderStyled = styled.header`
   );
   backdrop-filter: blur(5px);
   border-radius: 0px 0px 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.181);
 `;
 
 export default HeaderStyled;
