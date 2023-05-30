@@ -6,8 +6,10 @@ const HeaderStyled = styled.header`
   align-items: center;
   justify-content: center;
   top: 0px;
-  width: 320px;
+  min-width: 320px;
+  width: 100vw;
   height: 105px;
+  max-width: 600px;
   background: linear-gradient(
     rgba(98, 96, 138, 0) 0%,
     rgba(98, 96, 138, 0.9) 72.48%
