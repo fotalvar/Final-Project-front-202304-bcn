@@ -24,5 +24,20 @@ describe("Given a Nav component", () => {
 
       expect(imageAltText).toBeInTheDocument();
     });
+
+    test("Then it should show a Exit icon with an alternative text 'Log out' ", () => {
+      const expectedAlternativeText = "Log out";
+      const route: RouteObject[] = [{ path: "/", element: <Nav /> }];
+      const router = createMemoryRouter(route);
+
+      render(
+        <ThemeProvider theme={theme}>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      );
+      const imageAltText = screen.getByAltText(expectedAlternativeText);
+
+      expect(imageAltText).toBeInTheDocument();
+    });
   });
 });
