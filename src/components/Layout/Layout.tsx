@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
+import ContainerStyled from "../shared/ContainerStyled";
 
 const Layout = (): JSX.Element => {
-  const isLogged = true;
   return (
-    <>
-      {isLogged && <Header />}
+    <ContainerStyled>
+      <Header />
       <Outlet />
-    </>
+    </ContainerStyled>
   );
 };
 
