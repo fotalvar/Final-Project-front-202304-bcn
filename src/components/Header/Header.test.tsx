@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import App from "../App/App";
 import { ThemeProvider } from "styled-components";
 import theme from "../../styles/theme/theme";
@@ -7,6 +7,7 @@ import {
   RouterProvider,
   createMemoryRouter,
 } from "react-router-dom";
+import renderWithProviders from "../../utils/testUtils";
 
 describe("Given a Header component", () => {
   describe("When it is rendered", () => {
@@ -15,7 +16,7 @@ describe("Given a Header component", () => {
       const route: RouteObject[] = [{ path: "/", element: <App /> }];
       const router = createMemoryRouter(route);
 
-      render(
+      renderWithProviders(
         <ThemeProvider theme={theme}>
           <RouterProvider router={router} />
         </ThemeProvider>
