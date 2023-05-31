@@ -6,6 +6,7 @@ import GlobalStyle from "./styles/GlobalStyle";
 import theme from "./styles/theme/theme";
 import { RouterProvider } from "react-router-dom";
 import appRouter from "./routers/appRouter";
+import "@fontsource/inria-sans";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
