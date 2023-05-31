@@ -10,7 +10,7 @@ const LoginFormStyled = styled.form`
 
   .login-form {
     &__controller {
-      background: #ffffff;
+      background-color: ${(props) => props.theme.colors.mainLight};
       border-radius: 10px;
       border: none;
       width: 280px;
@@ -23,12 +23,12 @@ const LoginFormStyled = styled.form`
       width: 180px;
       height: 55px;
       background: #454071;
-      color: #ffffff;
+      color: ${(props) => props.theme.colors.mainLight};
       text-transform: uppercase;
       border: none;
-      font-size: 18px;
-      box-shadow: 0px 6.82667px 6.82667px rgba(0, 0, 0, 0.25);
-      border-radius: 42.6667px;
+      font-size: ${(props) => props.theme.fontSizes.normal};
+      box-shadow: 0px 6px 6px #0000003f;
+      border-radius: 50px;
     }
   }
 `;
