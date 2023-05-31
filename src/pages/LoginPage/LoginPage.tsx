@@ -1,6 +1,7 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
 
 const LoginPage = (): React.ReactElement => {
-  return <LoginForm />;
+  return <LoginForm handleLoginSubmit={() => ""} />;
 };
+
 export default LoginPage;

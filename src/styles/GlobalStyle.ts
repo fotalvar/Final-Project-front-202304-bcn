@@ -17,7 +17,7 @@ h5,
 h6,
 p {
   margin: 0;
-  font-family: ${(props) => props.theme.fonts.primary};
+  font-family: "Inria Sans";
 }
 
 a {
