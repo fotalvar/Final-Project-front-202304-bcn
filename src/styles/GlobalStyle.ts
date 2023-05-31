@@ -17,6 +17,7 @@ h5,
 h6,
 p {
   margin: 0;
+  font-family: ${(props) => props.theme.fonts.primary};
 }
 
 a {
@@ -36,6 +37,15 @@ ul {
   list-style: none;
   padding-left: 0;
   margin: 0;
+}
+
+button{
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input{
+  font-family: inherit;
 }
 `;
 
