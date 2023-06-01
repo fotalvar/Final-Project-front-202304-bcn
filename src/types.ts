@@ -12,3 +12,7 @@ export interface UserTokenStructure {
 export interface UserTokenData extends UserTokenStructure {
   isLogged: boolean;
 }
+
+export interface UserToken {
+  token: string;
+}

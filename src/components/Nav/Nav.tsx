@@ -7,7 +7,7 @@ const Nav = (): React.ReactElement => {
     <NavStyled>
       <ul className="nav">
         <li className="nav__item">
-          <NavLink to="/home">
+          <NavLink to="/user/home">
             <img
               src="../images/icons/home.svg"
               alt="Home page"
@@ -17,7 +17,7 @@ const Nav = (): React.ReactElement => {
           </NavLink>
         </li>
         <li className="nav__item">
-          <NavLink to="/logout">
+          <NavLink to="/user/login">
             <img
               src="../images/icons/logout.svg"
               alt="Log out"
