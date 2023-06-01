@@ -17,6 +17,10 @@ const LoginFormStyled = styled.form`
       height: 55px;
       padding: 15px;
       filter: drop-shadow(0px 4px 4px #0000003f);
+
+      &:focus {
+        outline: solid 3px ${(props) => props.theme.colors.secondary};
+      }
     }
 
     &__button {
