@@ -24,6 +24,8 @@ const LoginForm = ({
     handleFormSubmit(loginData);
   };
 
+  const isDisabled = !loginData.username || !loginData.password;
+
   return (
     <LoginFormStyled
       className="login-form"
@@ -52,7 +54,11 @@ const LoginForm = ({
         value={loginData.password}
         onChange={onChangeLogin}
       />
-      <button className="login-form__button" type="submit">
+      <button
+        className="login-form__button"
+        type="submit"
+        disabled={isDisabled}
+      >
         login
       </button>
     </LoginFormStyled>
