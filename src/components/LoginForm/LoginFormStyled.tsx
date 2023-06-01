@@ -29,6 +29,13 @@ const LoginFormStyled = styled.form`
       font-size: ${(props) => props.theme.fontSizes.normal};
       box-shadow: 0px 6px 6px #0000003f;
       border-radius: 50px;
+      transition: 0.5s;
+
+      &:disabled {
+        background-color: #8e90a67f;
+        color: ${(props) => props.theme.colors.primaryDark};
+        transition: 0.5s;
+      }
     }
   }
 `;
