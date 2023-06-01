@@ -1,4 +1,4 @@
-import { UserToken, UserTokenStructure } from "../../types";
+import { UserCredentials, UserToken, UserTokenStructure } from "../../types";
 import { UserTokenData } from "../../types";
 
 export const initialUserStateMock: UserTokenData = {
@@ -25,4 +25,9 @@ export const userDataTokenMock: UserTokenStructure = {
 export const userToken: UserToken = {
   token:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDcwZGQ2ODNlNWIyM2UwZmVhNjRiMDgiLCJuYW1lIjoiZmVkZSIsImlhdCI6MTY4NTUxNjU3NSwiZXhwIjoxNjg1Njg5Mzc1fQ.tA0bazQJhRuPZUM3W_20lvh8hDbaPf6La35QuTeAZsw",
+};
+
+export const userCredentials: UserCredentials = {
+  username: "fede",
+  password: "fede",
 };
