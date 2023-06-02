@@ -1,6 +1,7 @@
 import { screen } from "@testing-library/react";
-import Nav from "./Nav";
+
 import renderWithProviders from "../../utils/testUtils";
+import Nav from "./Nav";
 
 describe("Given a Nav component", () => {
   describe("When it is rendered", () => {
