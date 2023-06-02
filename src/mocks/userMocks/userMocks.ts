@@ -31,12 +31,15 @@ export const decodedTokenMock: DecodedTokenStructure = {
   name: "fede",
 };
 
-export const userToken = {
-  token:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDcwZGQ2ODNlNWIyM2UwZmVhNjRiMDgiLCJuYW1lIjoiZmVkZSIsImlhdCI6MTY4NTUxNjU3NSwiZXhwIjoxNjg1Njg5Mzc1fQ.tA0bazQJhRuPZUM3W_20lvh8hDbaPf6La35QuTeAZsw",
-};
+export const userToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDcwZGQ2ODNlNWIyM2UwZmVhNjRiMDgiLCJuYW1lIjoiZmVkZSIsImlhdCI6MTY4NTUxNjU3NSwiZXhwIjoxNjg1Njg5Mzc1fQ.tA0bazQJhRuPZUM3W_20lvh8hDbaPf6La35QuTeAZsw";
 
 export const userCredentials: UserCredentials = {
   username: "fede",
   password: "fede",
+};
+
+export const userCredentialsFail: UserCredentials = {
+  username: "Nosoyunusuario",
+  password: "nosoyunacontraseña",
 };
