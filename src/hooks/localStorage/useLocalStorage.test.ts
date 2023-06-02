@@ -8,7 +8,7 @@ describe("Given a removeToken function", () => {
       const key = "token";
       const expectedToken = undefined;
 
-      setTokenData(key, userToken.token);
+      setTokenData(key, userToken);
       const tokenRemovedResult = removeToken(key);
 
       expect(tokenRemovedResult).toBe(expectedToken);
@@ -21,9 +21,9 @@ describe("Given a getToken function", () => {
     test("Then it should get the token from the localStorage", () => {
       const { getTokenData, setTokenData } = useLocalStorage();
       const key = "token";
-      const expectedToken = userToken.token;
+      const expectedToken = userToken;
 
-      setTokenData(key, userToken.token);
+      setTokenData(key, userToken);
       const token = getTokenData(key);
 
       expect(token).toBe(expectedToken);
