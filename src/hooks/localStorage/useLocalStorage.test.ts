@@ -15,3 +15,18 @@ describe("Given a removeToken function", () => {
     });
   });
 });
+
+describe("Given a getToken function", () => {
+  describe("When it is called", () => {
+    test("Then it should get the token from the localStorage", () => {
+      const { getTokenData, setTokenData } = useLocalStorage();
+      const key = "token";
+      const expectedToken = userToken.token;
+
+      setTokenData(key, userToken.token);
+      const token = getTokenData(key);
+
+      expect(token).toBe(expectedToken);
+    });
+  });
+});
