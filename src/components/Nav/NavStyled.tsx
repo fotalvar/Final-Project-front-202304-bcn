@@ -19,6 +19,11 @@ const NavStyled = styled.nav`
       width: 90px;
       border: 1px solid rgb(255 255 255 / 10%);
     }
+
+    &__logout_button {
+      background: none;
+      border: none;
+    }
   }
 `;
 
