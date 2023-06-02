@@ -8,11 +8,20 @@ export interface UserTokenStructure {
   id: string;
   token: string;
 }
+export interface DecodedTokenStructure {
+  id: string;
+  name: string;
+}
+
+export interface UserToken {
+  token: string;
+}
 
 export interface UserTokenData extends UserTokenStructure {
   isLogged: boolean;
 }
 
-export interface UserToken {
-  token: string;
+export interface DecodedUserDataStructure {
+  id: string;
+  name: string;
 }
