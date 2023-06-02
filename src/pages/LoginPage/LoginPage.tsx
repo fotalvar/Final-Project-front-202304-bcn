@@ -29,6 +29,7 @@ const LoginPage = (): React.ReactElement => {
       ...decodedToken,
       token,
     };
+
     dispatch(loginUserActionCreator(userData));
 
     if (localStorage.getItem("token")) {
