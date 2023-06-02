@@ -23,8 +23,12 @@ const LoginPage = (): React.ReactElement => {
     const token = await getUserToken(user);
 
     localStorage.setItem("token", token);
+    const decodedToken = getTokenData(token);
 
-    const userData = getTokenData(token);
+    const userData = {
+      ...decodedToken,
+      token,
+    };
     dispatch(loginUserActionCreator(userData));
 
     if (localStorage.getItem("token")) {

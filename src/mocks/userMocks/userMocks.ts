@@ -1,4 +1,8 @@
-import { UserCredentials, UserToken, UserTokenStructure } from "../../types";
+import {
+  DecodedTokenStructure,
+  UserCredentials,
+  UserTokenStructure,
+} from "../../types";
 import { UserTokenData } from "../../types";
 
 export const initialUserStateMock: UserTokenData = {
@@ -22,7 +26,12 @@ export const userDataTokenMock: UserTokenStructure = {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDcwZGQ2ODNlNWIyM2UwZmVhNjRiMDgiLCJuYW1lIjoiZmVkZSIsImlhdCI6MTY4NTUxNjU3NSwiZXhwIjoxNjg1Njg5Mzc1fQ.tA0bazQJhRuPZUM3W_20lvh8hDbaPf6La35QuTeAZsw",
 };
 
-export const userToken: UserToken = {
+export const decodedTokenMock: DecodedTokenStructure = {
+  id: "6470dd683e5b23e0fea64b08",
+  name: "fede",
+};
+
+export const userToken = {
   token:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDcwZGQ2ODNlNWIyM2UwZmVhNjRiMDgiLCJuYW1lIjoiZmVkZSIsImlhdCI6MTY4NTUxNjU3NSwiZXhwIjoxNjg1Njg5Mzc1fQ.tA0bazQJhRuPZUM3W_20lvh8hDbaPf6La35QuTeAZsw",
 };
