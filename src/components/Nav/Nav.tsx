@@ -1,8 +1,22 @@
 import React from "react";
 import NavStyled from "./NavStyled";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import useLocalStorage from "../../hooks/localStorage/useLocalStorage";
+import paths from "../../routers/paths/paths";
+import { useAppDispatch } from "../../store";
+import { logoutUserActionCreator } from "../../store/user/userSlice";
 
 const Nav = (): React.ReactElement => {
+  const { removeToken } = useLocalStorage();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const logOutOnClick = (): void => {
+    removeToken("token");
+    dispatch(logoutUserActionCreator);
+    navigate(paths.root);
+  };
+
   return (
     <NavStyled>
       <ul className="nav">
@@ -17,14 +31,14 @@ const Nav = (): React.ReactElement => {
           </NavLink>
         </li>
         <li className="nav__item">
-          <NavLink to="/user/login">
+          <button className="nav__logout_button" onClick={logOutOnClick}>
             <img
               src="../images/icons/logout.svg"
               alt="Log out"
               width="30"
               height="30"
             />
-          </NavLink>
+          </button>
         </li>
       </ul>
     </NavStyled>
