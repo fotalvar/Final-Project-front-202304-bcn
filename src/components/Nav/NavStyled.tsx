@@ -23,6 +23,7 @@ const NavStyled = styled.nav`
     &__logout_button {
       background: none;
       border: none;
+      font-size: 0;
     }
   }
 `;
