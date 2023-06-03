@@ -1,0 +1,52 @@
+import styled from "styled-components";
+
+const ListPageStyled = styled.main`
+  margin-top: 120px;
+
+  .teamsList {
+    &__title {
+      text-align: center;
+      color: ${(props) => props.theme.colors.secondary};
+
+      &:first-letter {
+        text-transform: capitalize;
+      }
+    }
+
+    &__rankList {
+      width: 180px;
+      height: 48px;
+      padding: 15px;
+      background: ${(props) => props.theme.colors.mainLight};
+      box-shadow: 0px 6px 6px #0000003f;
+      border-radius: 50px;
+      appearance: none;
+      background-image: url("../public/images/icons/down-arrow.svg");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem top 50%;
+      background-size: 0.65rem auto;
+      font-family: inherit;
+    }
+
+    &__addButton {
+      width: 80px;
+      height: 48px;
+      border: none;
+      background: ${(props) => props.theme.colors.secondary};
+      box-shadow: 0px 6px 6px #0000003f;
+      border-radius: 45px;
+      font-size: ${(props) => props.theme.fontSizes.big};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__filter {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+  }
+`;
+export default ListPageStyled;
