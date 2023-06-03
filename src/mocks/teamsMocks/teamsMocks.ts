@@ -29,7 +29,7 @@ export const teamMock: TeamsStructure[] = [
     bgimage: "https://i.blogs.es/1d5449/x720/840_560.jpeg",
   },
   {
-    id: "6471d07c47109a6b3fc62df7",
+    id: "6471d07c47109a6b3fc62df9",
     name: "Desert 5 stars",
     description:
       "A team full of pyro characters. Perfect for elemental synergy and continuous pyro attack",
