@@ -16,7 +16,7 @@ const LoginFormStyled = styled.form`
       width: 280px;
       height: 55px;
       padding: 15px;
-      filter: drop-shadow(0px 4px 4px #0000003f);
+      box-shadow: #00000075 0px 6px 10px 0px;
 
       &:focus {
         outline: solid 3px ${(props) => props.theme.colors.secondary};

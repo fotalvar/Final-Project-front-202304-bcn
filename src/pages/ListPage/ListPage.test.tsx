@@ -5,7 +5,7 @@ import ListPage from "./ListPage";
 describe("Given a ListPage", () => {
   describe("When it is rendered", () => {
     test("Then it should show a header with the text includes 'teams'", () => {
-      const expectedText = "teams";
+      const expectedText = "Teams";
 
       renderWithProviders(<ListPage />);
 

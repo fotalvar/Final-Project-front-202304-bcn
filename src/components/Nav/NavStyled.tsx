@@ -17,7 +17,9 @@ const NavStyled = styled.nav`
       justify-content: center;
       height: 105px;
       width: 90px;
-      border: 1px solid rgb(255 255 255 / 10%);
+      border: 1px solid #ffffff10;
+      border-top: none;
+      box-shadow: #00000036 0 0 19px 0;
     }
 
     &__logout_button {

@@ -15,7 +15,8 @@ const HeaderStyled = styled.header`
   background: linear-gradient(rgba(98, 96, 138, 0) 0%, #62608ae5 72.48%);
   backdrop-filter: blur(5px);
   border-radius: 0px 0px 10px 10px;
-  border: 1px solid #ffffff2e;
+  border-bottom: 2px solid rgb(255 255 255 / 29%);
+  border-top: none;
 `;
 
 export default HeaderStyled;
