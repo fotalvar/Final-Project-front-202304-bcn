@@ -9,13 +9,13 @@ const ListPage = (): React.ReactElement => {
       <h1 className="teamsList__title">{userName}`s teams</h1>
       <section className="teamsList__filter">
         <select className="teamsList__rankList">
-          <option selected>All rank levels</option>
+          <option defaultValue="ranks">All rank levels</option>
           <option value="a">A</option>
-          <option value="a">B</option>
-          <option value="a">C</option>
-          <option value="a">D</option>
-          <option value="a">S</option>
-          <option value="a">SS</option>
+          <option value="b">B</option>
+          <option value="c">C</option>
+          <option value="d">D</option>
+          <option value="s">S</option>
+          <option value="ss">SS</option>
         </select>
         <button className="teamsList__addButton">
           {" "}
