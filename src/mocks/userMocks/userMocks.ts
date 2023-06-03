@@ -3,16 +3,16 @@ import {
   UserCredentials,
   UserTokenStructure,
 } from "../../types";
-import { UserTokenData } from "../../types";
+import { UserDataStructure } from "../../types";
 
-export const initialUserStateMock: UserTokenData = {
+export const initialUserStateMock: UserDataStructure = {
   name: "",
   id: "",
   token: "",
   isLogged: false,
 };
 
-export const UserStateMock: UserTokenData = {
+export const UserStateMock: UserDataStructure = {
   name: "Fede",
   id: "1234",
   token: "abcdefghi",

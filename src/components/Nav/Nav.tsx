@@ -14,7 +14,7 @@ const Nav = (): React.ReactElement => {
   const logOutOnClick = (): void => {
     removeToken("token");
     dispatch(logoutUserActionCreator);
-    navigate(paths.root);
+    navigate(paths.login);
   };
 
   return (
@@ -31,7 +31,8 @@ const Nav = (): React.ReactElement => {
           </NavLink>
         </li>
         <li className="nav__item">
-          <button className="nav__logout_button" onClick={logOutOnClick}>
+          <button onClick={logOutOnClick} className="nav__logout_button">
+            Logout
             <img
               src="../images/icons/logout.svg"
               alt="Log out"
