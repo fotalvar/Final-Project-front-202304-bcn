@@ -6,7 +6,7 @@ const ListPage = (): React.ReactElement => {
 
   return (
     <ListPageStyled className="teamsList">
-      <h1 className="teamsList__title">{userName}`s teams</h1>
+      <h1 className="teamsList__title">{userName}`s Teams</h1>
       <section className="teamsList__filter">
         <select className="teamsList__rankList">
           <option defaultValue="ranks">All rank levels</option>

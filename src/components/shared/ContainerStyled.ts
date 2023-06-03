@@ -11,6 +11,9 @@ const ContainerStyled = styled.div`
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
+  border-right: #ffffff10 2px solid;
+  border-left: #ffffff10 2px solid;
+  box-shadow: #00000061 0px 0px 20px 1px;
 `;
 
 export default ContainerStyled;
