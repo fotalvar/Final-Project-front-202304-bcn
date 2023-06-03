@@ -1,5 +1,5 @@
 import { lazy } from "react";
 
-export const LazyLoginPages = lazy(
-  () => import("../pages/LoginPage/LoginPage")
-);
+export const LazyLoginPage = lazy(() => import("../pages/LoginPage/LoginPage"));
+
+export const LazyListPage = lazy(() => import("../pages/ListPage/ListPage"));
