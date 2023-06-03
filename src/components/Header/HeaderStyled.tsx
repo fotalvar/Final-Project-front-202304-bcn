@@ -17,6 +17,7 @@ const HeaderStyled = styled.header`
   border-radius: 0px 0px 10px 10px;
   border-bottom: 2px solid rgb(255 255 255 / 29%);
   border-top: none;
+  z-index: 10;
 `;
 
 export default HeaderStyled;

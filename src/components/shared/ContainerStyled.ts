@@ -6,7 +6,10 @@ const ContainerStyled = styled.div`
   min-width: 320px;
   max-width: 600px;
   padding: 20px;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   background-image: url("../images/background.webp");
   background-repeat: no-repeat;
   background-position: 50% 0;

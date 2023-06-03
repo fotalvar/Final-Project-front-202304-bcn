@@ -1,5 +1,7 @@
 import ListPageStyled from "./ListPageStyled";
 import { useAppSelector } from "../../store";
+import List from "../../components/List/List";
+import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
 
 const ListPage = (): React.ReactElement => {
   const userName = useAppSelector((state) => state.userStore.name);
@@ -27,6 +29,7 @@ const ListPage = (): React.ReactElement => {
           />
         </button>
       </section>
+      <List Teams={teamMock} />
     </ListPageStyled>
   );
 };

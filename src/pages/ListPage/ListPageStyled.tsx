@@ -21,7 +21,7 @@ const ListPageStyled = styled.main`
       box-shadow: 0px 6px 6px #0000003f;
       border-radius: 50px;
       appearance: none;
-      background-image: url("../public/images/icons/down-arrow.svg");
+      background-image: url("../images/icons/down-arrow.svg");
       background-repeat: no-repeat;
       background-position: right 0.7rem top 50%;
       background-size: 0.65rem auto;
