@@ -29,7 +29,7 @@ describe("Given a Nav component", () => {
   describe("When it is rendered and receives a click on logout button", () => {
     test("Then it should not show the logout button", async () => {
       const userData = UserStateMock;
-      renderWithProviders(<Layout />, { userStore: userData });
+      renderWithProviders(<Layout />, { user: userData });
 
       const logoutButton = screen.getByRole("button", {
         name: "Logout Log out",

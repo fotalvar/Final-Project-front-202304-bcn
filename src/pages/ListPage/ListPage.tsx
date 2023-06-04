@@ -1,10 +1,23 @@
 import ListPageStyled from "./ListPageStyled";
-import { useAppSelector } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
+import useApi from "../../hooks/useApi/UseApi";
+import { useEffect } from "react";
+import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 
 const ListPage = (): React.ReactElement => {
-  const userName = useAppSelector((state) => state.userStore.name);
+  const userName = useAppSelector((state) => state.user.name);
+  const team = useAppSelector((state) => state.teams);
+
+  const { getTeams } = useApi();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    (async () => {
+      const teams = await getTeams();
+      dispatch(loadTeamsActionCreator(teams));
+    })();
+  }, [dispatch, getTeams]);
 
   return (
     <ListPageStyled className="teamsList">
@@ -29,7 +42,7 @@ const ListPage = (): React.ReactElement => {
           />
         </button>
       </section>
-      <List teamProps={teamMock} />
+      <List teamProps={team.teams} />
     </ListPageStyled>
   );
 };
