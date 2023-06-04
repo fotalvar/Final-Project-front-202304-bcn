@@ -29,7 +29,7 @@ const ListPage = (): React.ReactElement => {
           />
         </button>
       </section>
-      <List Teams={teamMock} />
+      <List teamProps={teamMock} />
     </ListPageStyled>
   );
 };
