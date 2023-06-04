@@ -43,9 +43,15 @@ const ListPageStyled = styled.main`
 
     &__filter {
       display: flex;
+      -webkit-box-pack: center;
       justify-content: center;
       gap: 20px;
       padding: 20px;
+      top: 105px;
+      z-index: 2;
+      position: sticky;
+      backdrop-filter: blur(8px);
+      border-bottom: solid #fdfdfd1a 2px;
     }
   }
 `;
