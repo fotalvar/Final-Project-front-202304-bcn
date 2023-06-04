@@ -6,7 +6,7 @@ import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
 describe("Given a List component", () => {
   describe("When it's rendered ", () => {
     test("Then it should show a heading with the name of the team", () => {
-      renderWithProviders(<List Teams={teamMock} />);
+      renderWithProviders(<List teamProps={teamMock} />);
 
       const teamName = screen.getAllByRole("heading", { level: 2 });
 

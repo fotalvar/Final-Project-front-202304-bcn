@@ -11,7 +11,7 @@ const Button = ({
   text,
   actionOnClick,
   className,
-}: ButtonProps): JSX.Element => {
+}: ButtonProps): React.ReactElement => {
   return (
     <ButtonStyled onClick={actionOnClick} className={className}>
       {text}
