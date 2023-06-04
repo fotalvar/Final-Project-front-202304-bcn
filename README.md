@@ -21,8 +21,9 @@ Teams Impact offers the following features:
 
 ## Tech Stack
 
-Client: React, Redux, Styled components
-Server: Node, Express, MongoDB
+- Client: Typescript, React, Redux, Styled components
+- Server: Node, Express, MongoDB
+- Testing: Vitest, Jest
 
 ## Screenshot
 
