@@ -1,10 +1,10 @@
 import axios from "axios";
-import { apiUrl } from "../user/useUser";
 import { useCallback } from "react";
 import { useAppSelector } from "../../store";
+import { apiUrl } from "../user/useUser";
 
 const useApi = () => {
-  const { token } = useAppSelector((state) => state.user);
+  const { token } = useAppSelector((state) => state.userStore);
 
   const getTeams = useCallback(async () => {
     try {
@@ -16,7 +16,7 @@ const useApi = () => {
 
       return teams;
     } catch {
-      const error = new Error("Error getting the Teams");
+      const error = new Error("Can't get Teams");
       throw error;
     }
   }, [token]);
