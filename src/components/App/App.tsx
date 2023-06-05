@@ -19,7 +19,12 @@ const App = (): React.ReactElement => {
       dispatch(loginUserActionCreator({ ...userData, token: token }));
     }
   }, [dispatch, getItemLocalStorage, getTokenData]);
-  return <Layout />;
+
+  return (
+    <>
+      <Layout />
+    </>
+  );
 };
 
 export default App;

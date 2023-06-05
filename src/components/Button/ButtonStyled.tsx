@@ -14,8 +14,7 @@ const ButtonStyled = styled.button`
     color: ${(props) => props.theme.colors.mainLight};
     transition: 0.5s;
   }
-
-  &__loadMore {
+  &__load-more {
     background: ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.mainLight};
     transition: 0.5s;
