@@ -2,13 +2,11 @@ import styled from "styled-components";
 
 const ContainerStyled = styled.div`
   margin: 0 auto;
-  align-items: center;
   min-width: 320px;
   max-width: 600px;
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   background-image: url("../images/background.webp");
   background-repeat: no-repeat;
