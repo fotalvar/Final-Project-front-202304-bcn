@@ -33,3 +33,7 @@ export interface DecodedUserDataStructure {
   id: string;
   name: string;
 }
+
+export interface UiStateStructure {
+  isLoading: boolean;
+}

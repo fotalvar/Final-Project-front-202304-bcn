@@ -8,6 +8,7 @@ import { vi } from "vitest";
 import { errorHandlers } from "../../mocks/handlers";
 import { server } from "../../mocks/server";
 import { renderHook } from "@testing-library/react";
+import { wrapper } from "../../utils/utils";
 
 beforeAll(() => {
   vi.clearAllMocks();
@@ -19,7 +20,7 @@ describe("Given a getUserToken", () => {
       const expectedToken = userToken;
       const user = userCredentials;
 
-      const { result } = renderHook(() => useUser());
+      const { result } = renderHook(() => useUser(), { wrapper: wrapper });
       const { getUserToken } = result.current;
       const token = await getUserToken(user);
 
@@ -38,7 +39,7 @@ describe("Given a getUserToken", () => {
         result: {
           current: { getUserToken },
         },
-      } = renderHook(() => useUser());
+      } = renderHook(() => useUser(), { wrapper: wrapper });
 
       const erroraxios = async () => await getUserToken(failUser);
 

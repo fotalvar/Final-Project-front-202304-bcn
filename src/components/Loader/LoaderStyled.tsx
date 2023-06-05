@@ -11,6 +11,7 @@ const LoaderStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadein 0.3s linear;
 
   .loader {
     width: 100px;
@@ -51,6 +52,15 @@ const LoaderStyled = styled.div`
   @keyframes rotate {
     100% {
       transform: rotate(360deg);
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
 `;
