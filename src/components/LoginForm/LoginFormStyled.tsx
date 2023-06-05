@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const LoginFormStyled = styled.form`
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
