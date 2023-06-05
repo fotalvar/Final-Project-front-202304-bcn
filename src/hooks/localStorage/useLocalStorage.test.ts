@@ -4,12 +4,12 @@ import useLocalStorage from "./useLocalStorage";
 describe("Given a removeToken function", () => {
   describe("When it is called", () => {
     test("Then it should remove the token from the localStorage", () => {
-      const { removeToken, setTokenData } = useLocalStorage();
+      const { removeItemLocalStorage, setItemLocalStorage } = useLocalStorage();
       const key = "token";
       const expectedToken = undefined;
 
-      setTokenData(key, userToken);
-      const tokenRemovedResult = removeToken(key);
+      setItemLocalStorage(key, userToken);
+      const tokenRemovedResult = removeItemLocalStorage(key);
 
       expect(tokenRemovedResult).toBe(expectedToken);
     });
@@ -19,12 +19,12 @@ describe("Given a removeToken function", () => {
 describe("Given a getToken function", () => {
   describe("When it is called", () => {
     test("Then it should get the token from the localStorage", () => {
-      const { getTokenData, setTokenData } = useLocalStorage();
+      const { getItemLocalStorage, setItemLocalStorage } = useLocalStorage();
       const key = "token";
       const expectedToken = userToken;
 
-      setTokenData(key, userToken);
-      const token = getTokenData(key);
+      setItemLocalStorage(key, userToken);
+      const token = getItemLocalStorage(key);
 
       expect(token).toBe(expectedToken);
     });

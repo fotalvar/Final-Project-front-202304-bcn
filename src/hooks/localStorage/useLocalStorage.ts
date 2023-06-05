@@ -1,17 +1,21 @@
 const useLocalStorage = () => {
-  const removeToken = (key: string) => {
+  const removeItemLocalStorage = (key: string) => {
     return localStorage.removeItem(key);
   };
 
-  const getTokenData = (key: string) => {
+  const getItemLocalStorage = (key: string) => {
     return localStorage.getItem(key);
   };
 
-  const setTokenData = (key: string, token: string) => {
+  const setItemLocalStorage = (key: string, token: string) => {
     return localStorage.setItem(key, token);
   };
 
-  return { removeToken, getTokenData, setTokenData };
+  return {
+    removeItemLocalStorage,
+    getItemLocalStorage,
+    setItemLocalStorage,
+  };
 };
 
 export default useLocalStorage;

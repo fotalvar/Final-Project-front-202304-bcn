@@ -24,6 +24,9 @@ const Card = ({ team }: CardProps): React.ReactElement => {
               src={team.bgimage}
               alt="Team"
               className="teamCard__teamImage"
+              width="280"
+              height="170"
+              loading="lazy"
             />
             <h2 className="teamCard__title">{team.name}</h2>
           </button>

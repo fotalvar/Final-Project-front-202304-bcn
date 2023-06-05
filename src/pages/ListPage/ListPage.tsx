@@ -1,14 +1,27 @@
 import ListPageStyled from "./ListPageStyled";
-import { useAppSelector } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
+import useApi from "../../hooks/useApi/useApi";
+import { useEffect } from "react";
+import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 
 const ListPage = (): React.ReactElement => {
-  const userName = useAppSelector((state) => state.userStore.name);
+  const { name } = useAppSelector((state) => state.userStore);
+  const team = useAppSelector((state) => state.teamsStore);
+
+  const { getTeams } = useApi();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    (async () => {
+      const teams = await getTeams();
+      dispatch(loadTeamsActionCreator(teams));
+    })();
+  }, [dispatch, getTeams]);
 
   return (
     <ListPageStyled className="teamsList">
-      <h1 className="teamsList__title">{userName}`s Teams</h1>
+      <h1 className="teamsList__title">{name}`s Teams</h1>
       <section className="teamsList__filter">
         <select className="teamsList__rankList">
           <option defaultValue="ranks">All rank levels</option>
@@ -29,7 +42,7 @@ const ListPage = (): React.ReactElement => {
           />
         </button>
       </section>
-      <List teamProps={teamMock} />
+      <List teamProps={team.teams} />
     </ListPageStyled>
   );
 };

@@ -4,7 +4,7 @@ import { DecodedUserDataStructure } from "../../types";
 const useToken = () => {
   const getTokenData = (token: string): DecodedUserDataStructure => {
     const tokenData: { name: string; sub: string } = jwt_decode(token);
-    const userData: DecodedUserDataStructure = {
+    const userData = {
       id: tokenData.sub,
       name: tokenData.name,
     };
