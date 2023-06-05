@@ -4,7 +4,7 @@ import { TeamsState, TeamsStructure } from "../../store/teams/types";
 import { apiUrl } from "../user/useUser";
 
 const useTeams = () => {
-  const token = useAppSelector((state) => state.user.token);
+  const token = useAppSelector((state) => state.userStore.token);
 
   const request = {
     headers: {

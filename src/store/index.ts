@@ -6,8 +6,8 @@ import { userReducer } from "./user/userSlice";
 import { teamsReducer } from "./teams/teamsSlice";
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  teams: teamsReducer,
+  userStore: userReducer,
+  teamsStore: teamsReducer,
 });
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {

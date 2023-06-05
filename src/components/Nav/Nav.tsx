@@ -7,12 +7,12 @@ import { useAppDispatch } from "../../store";
 import { logoutUserActionCreator } from "../../store/user/userSlice";
 
 const Nav = (): React.ReactElement => {
-  const { removeToken } = useLocalStorage();
+  const { removeItemLocalStorage } = useLocalStorage();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   const logOutOnClick = (): void => {
-    removeToken("token");
+    removeItemLocalStorage("token");
     dispatch(logoutUserActionCreator);
     navigate(paths.login);
   };

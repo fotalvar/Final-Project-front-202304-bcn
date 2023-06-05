@@ -13,12 +13,20 @@ export interface DecodedTokenStructure {
   name: string;
 }
 
+export interface TeamsStateFede {
+  id: string;
+}
+
 export interface UserToken {
   token: string;
 }
 
 export interface UserDataStructure extends UserTokenStructure {
   isLogged: boolean;
+}
+
+export interface UserName {
+  username: string;
 }
 
 export interface DecodedUserDataStructure {

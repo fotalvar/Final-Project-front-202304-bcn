@@ -1,13 +1,13 @@
 import ListPageStyled from "./ListPageStyled";
 import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import useApi from "../../hooks/useApi/UseApi";
+import useApi from "../../hooks/useApi/useApi";
 import { useEffect } from "react";
 import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 
 const ListPage = (): React.ReactElement => {
-  const userName = useAppSelector((state) => state.user.name);
-  const team = useAppSelector((state) => state.teams);
+  const { name } = useAppSelector((state) => state.userStore);
+  const team = useAppSelector((state) => state.teamsStore);
 
   const { getTeams } = useApi();
   const dispatch = useAppDispatch();
@@ -21,7 +21,7 @@ const ListPage = (): React.ReactElement => {
 
   return (
     <ListPageStyled className="teamsList">
-      <h1 className="teamsList__title">{userName}`s Teams</h1>
+      <h1 className="teamsList__title">{name}`s Teams</h1>
       <section className="teamsList__filter">
         <select className="teamsList__rankList">
           <option defaultValue="ranks">All rank levels</option>
