@@ -12,7 +12,6 @@ const Loader = (): React.ReactElement => {
           className="loader__icon"
         />
       </span>
-      ;
     </LoaderStyled>
   );
 };

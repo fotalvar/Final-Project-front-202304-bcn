@@ -1,12 +1,15 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { UiStateStructure } from "../../types";
 
 const initialState: UiStateStructure = {
   isLoading: false,
+  isError: false,
+  errorMessage: "",
+  isVisible: false,
 };
 
 const uiSlice = createSlice({
-  name: "loader",
+  name: "ui",
   initialState: initialState,
   reducers: {
     showLoader: (currentUiState: UiStateStructure) => ({
@@ -17,12 +20,29 @@ const uiSlice = createSlice({
       ...currentUiState,
       isLoading: false,
     }),
+    showError: (
+      currentUiState: UiStateStructure,
+      action: PayloadAction<Partial<UiStateStructure>>
+    ) => ({
+      ...currentUiState,
+      isError: action.payload.isError,
+      isVisible: true,
+      errorMessage: action.payload.errorMessage,
+    }),
+    hideError: (currentUiState: UiStateStructure) => ({
+      ...currentUiState,
+      isError: false,
+      isVisible: false,
+      errorMessage: "",
+    }),
   },
 });
 
 export const {
   showLoader: showLoaderActionCreator,
   hideLoader: hideLoaderActionCreator,
+  showError: showErrorActionCreator,
+  hideError: hideErrorActionCreator,
 } = uiSlice.actions;
 
 export const uiReducer = uiSlice.reducer;

@@ -6,12 +6,14 @@ interface CardProps {
   team: TeamsStructure;
 }
 
-const Card = ({ team }: CardProps): React.ReactElement => {
+const Card = ({
+  team: { bgimage, id, name, rating, type },
+}: CardProps): React.ReactElement => {
   return (
     <CardStyled>
-      <li className="teamCard" key={team.id}>
-        <article className="teamCard__container">
-          <button className="teamCard__close">
+      <li className="team-card" key={id}>
+        <article className="team-card__container">
+          <button className="team-card__close">
             <img
               src="../images/icons/remove.svg"
               alt="remove icon"
@@ -19,20 +21,20 @@ const Card = ({ team }: CardProps): React.ReactElement => {
               height="13"
             />
           </button>
-          <button className="teamCard__card">
+          <button className="team-card__card">
             <img
-              src={team.bgimage}
-              alt="Team"
-              className="teamCard__teamImage"
+              src={bgimage}
+              alt={`${name} Team`}
+              className="team-card__teamImage"
               width="280"
               height="170"
               loading="lazy"
             />
-            <h2 className="teamCard__title">{team.name}</h2>
+            <h2 className="team-card__title">{name}</h2>
           </button>
-          <section className="teamCard__info">
-            <span className="teamCard__rating">{team.rating}</span>
-            <span className="teamCard__type">{team.type}</span>
+          <section className="team-card__info">
+            <span className="team-card__rating">{rating}</span>
+            <span className="team-card__type">{type}</span>
           </section>
         </article>
       </li>

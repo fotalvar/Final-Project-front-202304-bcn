@@ -5,15 +5,17 @@ import React from "react";
 import paths from "../../routers/paths/paths";
 import Loader from "../Loader/Loader";
 import { useAppSelector } from "../../store";
+import Modal from "../Modal/Modal";
 
 const Layout = (): React.ReactElement => {
   const location = useLocation();
-  const { isLoading } = useAppSelector((state) => state.uiStore);
+  const { isLoading, isVisible } = useAppSelector((state) => state.uiStore);
 
   return (
     <ContainerStyled>
       {isLoading && <Loader />}
       {location.pathname === paths.login || <Header />}
+      {isVisible && <Modal />}
       <Outlet />
     </ContainerStyled>
   );

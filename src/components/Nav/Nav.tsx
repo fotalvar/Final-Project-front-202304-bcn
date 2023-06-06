@@ -5,6 +5,7 @@ import useLocalStorage from "../../hooks/localStorage/useLocalStorage";
 import paths from "../../routers/paths/paths";
 import { useAppDispatch } from "../../store";
 import { logoutUserActionCreator } from "../../store/user/userSlice";
+import { showErrorActionCreator } from "../../store/ui/uiSlice";
 
 const Nav = (): React.ReactElement => {
   const { removeItemLocalStorage } = useLocalStorage();
@@ -15,6 +16,12 @@ const Nav = (): React.ReactElement => {
     removeItemLocalStorage("token");
     dispatch(logoutUserActionCreator);
     navigate(paths.login);
+    dispatch(
+      showErrorActionCreator({
+        errorMessage: "Session closed",
+        isError: false,
+      })
+    );
   };
 
   return (
