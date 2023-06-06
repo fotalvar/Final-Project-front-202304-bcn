@@ -11,9 +11,9 @@ const Card = ({
 }: CardProps): React.ReactElement => {
   return (
     <CardStyled>
-      <li className="teamCard" key={id}>
-        <article className="teamCard__container">
-          <button className="teamCard__close">
+      <li className="team-card" key={id}>
+        <article className="team-card__container">
+          <button className="team-card__close">
             <img
               src="../images/icons/remove.svg"
               alt="remove icon"
@@ -21,20 +21,20 @@ const Card = ({
               height="13"
             />
           </button>
-          <button className="teamCard__card">
+          <button className="team-card__card">
             <img
               src={bgimage}
-              alt="Team"
-              className="teamCard__teamImage"
+              alt={`${name} Team`}
+              className="team-card__teamImage"
               width="280"
               height="170"
               loading="lazy"
             />
-            <h2 className="teamCard__title">{name}</h2>
+            <h2 className="team-card__title">{name}</h2>
           </button>
-          <section className="teamCard__info">
-            <span className="teamCard__rating">{rating}</span>
-            <span className="teamCard__type">{type}</span>
+          <section className="team-card__info">
+            <span className="team-card__rating">{rating}</span>
+            <span className="team-card__type">{type}</span>
           </section>
         </article>
       </li>

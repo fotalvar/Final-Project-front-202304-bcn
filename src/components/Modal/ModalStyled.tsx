@@ -4,7 +4,7 @@ const ModalStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
+  position: fixed;
   background: #14192bbf;
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -16,6 +16,10 @@ const ModalStyled = styled.div`
   color: white;
   gap: 30px;
   box-shadow: 0px 26px 20px 5px #00000095;
+  animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   .modal {
     &__icon {
@@ -48,6 +52,23 @@ const ModalStyled = styled.div`
   &.modal__ok {
     outline: 3px solid #61935b;
     border: 3px solid #afeeb3c9;
+  }
+
+  @keyframes swing-in-top-fwd {
+    0% {
+      -webkit-transform: rotateX(-100deg);
+      transform: rotateX(-100deg);
+      -webkit-transform-origin: top;
+      transform-origin: top;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      -webkit-transform-origin: top;
+      transform-origin: top;
+      opacity: 1;
+    }
   }
 `;
 

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const CardStyled = styled.ul`
-  .teamCard {
+  .team-card {
     &__container {
       display: flex;
       position: relative;

@@ -32,7 +32,9 @@ describe("Given an uiReducer", () => {
 
   describe("When it receives an state of isError on false", () => {
     test("Then it should return the new state", () => {
-      const initialUiState: UiStateStructure = { isError: false };
+      const initialUiState: UiStateStructure = {
+        isError: false,
+      };
       const newState: UiStateStructure = { isError: true };
 
       const resultState = uiReducer(

@@ -9,13 +9,13 @@ import Modal from "../Modal/Modal";
 
 const Layout = (): React.ReactElement => {
   const location = useLocation();
-  const { isLoading } = useAppSelector((state) => state.uiStore);
+  const { isLoading, isVisible } = useAppSelector((state) => state.uiStore);
 
   return (
     <ContainerStyled>
       {isLoading && <Loader />}
       {location.pathname === paths.login || <Header />}
-      <Modal />
+      {isVisible && <Modal />}
       <Outlet />
     </ContainerStyled>
   );

@@ -4,6 +4,8 @@ import { UiStateStructure } from "../../types";
 const initialState: UiStateStructure = {
   isLoading: false,
   isError: false,
+  errorMessage: "",
+  isVisible: false,
 };
 
 const uiSlice = createSlice({
@@ -20,14 +22,18 @@ const uiSlice = createSlice({
     }),
     showError: (
       currentUiState: UiStateStructure,
-      action: PayloadAction<UiStateStructure>
+      action: PayloadAction<Partial<UiStateStructure>>
     ) => ({
       ...currentUiState,
       isError: action.payload.isError,
+      isVisible: true,
+      errorMessage: action.payload.errorMessage,
     }),
     hideError: (currentUiState: UiStateStructure) => ({
       ...currentUiState,
       isError: false,
+      isVisible: false,
+      errorMessage: "",
     }),
   },
 });

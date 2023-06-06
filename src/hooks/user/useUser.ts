@@ -3,6 +3,7 @@ import { UserCredentials } from "../../types";
 import { useDispatch } from "react-redux";
 import {
   hideLoaderActionCreator,
+  showErrorActionCreator,
   showLoaderActionCreator,
 } from "../../store/ui/uiSlice";
 
@@ -23,6 +24,13 @@ const useUser = () => {
       return data.token;
     } catch (error) {
       (error as Error).message = "Wrong user name or password";
+      dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Wrong user name or password",
+          isError: true,
+        })
+      );
       throw error;
     }
   };
