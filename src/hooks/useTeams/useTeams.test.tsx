@@ -1,7 +1,9 @@
 import { renderHook } from "@testing-library/react";
 import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
-import useApi from "./useApi";
+import useApi from "./useTeams";
 import { wrapper } from "../../utils/utils";
+import { server } from "../../mocks/server";
+import { errorHandlers } from "../../mocks/handlers";
 
 describe("Given a getTeams function", () => {
   describe("When it is called", () => {
@@ -17,6 +19,21 @@ describe("Given a getTeams function", () => {
       const teamsList = await getTeams();
 
       expect(expectedTeams).toStrictEqual(teamsList);
+    });
+  });
+  describe("When it is called and return an error", () => {
+    test("Then it should reject", () => {
+      server.resetHandlers(...errorHandlers);
+
+      const {
+        result: {
+          current: { getTeams },
+        },
+      } = renderHook(() => useApi(), { wrapper: wrapper });
+
+      const error = async () => await getTeams();
+
+      expect(error).rejects.toThrowError();
     });
   });
 });
