@@ -35,5 +35,6 @@ export interface DecodedUserDataStructure {
 }
 
 export interface UiStateStructure {
-  isLoading: boolean;
+  isLoading?: boolean;
+  isError?: boolean;
 }
