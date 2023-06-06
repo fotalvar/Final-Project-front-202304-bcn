@@ -1,7 +1,7 @@
 import ListPageStyled from "./ListPageStyled";
 import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import useApi from "../../hooks/useApi/useApi";
+import useApi from "../../hooks/useTeams/useTeams";
 import { useEffect } from "react";
 import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 
