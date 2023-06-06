@@ -5,6 +5,7 @@ import React from "react";
 import paths from "../../routers/paths/paths";
 import Loader from "../Loader/Loader";
 import { useAppSelector } from "../../store";
+import Modal from "../Modal/Modal";
 
 const Layout = (): React.ReactElement => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const Layout = (): React.ReactElement => {
     <ContainerStyled>
       {isLoading && <Loader />}
       {location.pathname === paths.login || <Header />}
+      <Modal />
       <Outlet />
     </ContainerStyled>
   );
