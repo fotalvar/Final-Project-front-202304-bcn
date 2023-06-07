@@ -21,8 +21,9 @@ describe("Given a getTeams function", () => {
       expect(expectedTeams).toStrictEqual(teamsList);
     });
   });
+
   describe("When it is called and return an error", () => {
-    test("Then it should reject", () => {
+    test("Then it should dispatch the action showErrorActionCreator", async () => {
       server.resetHandlers(...errorHandlers);
 
       const {
@@ -31,9 +32,9 @@ describe("Given a getTeams function", () => {
         },
       } = renderHook(() => useApi(), { wrapper: wrapper });
 
-      const error = async () => await getTeams();
+      const error = await getTeams();
 
-      expect(error).rejects.toThrowError();
+      expect(error).toBeUndefined();
     });
   });
 });

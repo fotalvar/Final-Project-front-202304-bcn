@@ -11,4 +11,5 @@ const NotFoundPageStyled = styled.main`
   height: fit-content;
   margin-top: 20vh;
 `;
+
 export default NotFoundPageStyled;
