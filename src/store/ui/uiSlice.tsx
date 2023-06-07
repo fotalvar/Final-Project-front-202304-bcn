@@ -4,8 +4,8 @@ import { UiStateStructure } from "../../types";
 const initialState: UiStateStructure = {
   isLoading: false,
   isError: false,
-  errorMessage: "",
   isVisible: false,
+  errorMessage: "",
 };
 
 const uiSlice = createSlice({

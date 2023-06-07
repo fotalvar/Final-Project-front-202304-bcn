@@ -50,10 +50,11 @@ const LoaderStyled = styled.div`
       0 5px 5px #ffffff90, 0 10px 15px #ffffff60, 0 10px 20px 20px #ffffff40;
     filter: blur(3px);
     animation: 2s rotate linear infinite;
+    transition: 0.5s;
     @media (prefers-reduced-motion: reduce) {
       animation: none;
+      transition: none;
     }
-    transition: 0.5s;
   }
 
   @keyframes rotate {
