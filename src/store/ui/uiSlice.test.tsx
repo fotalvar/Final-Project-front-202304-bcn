@@ -30,7 +30,9 @@ describe("Given an uiReducer", () => {
       expect(newState).toStrictEqual(resultState);
     });
   });
+});
 
+describe("Given a showError reducer", () => {
   describe("When it receives an state of isError on false", () => {
     test("Then it should return the new state", () => {
       const initialUiState: UiStateStructure = uiStateMock;
