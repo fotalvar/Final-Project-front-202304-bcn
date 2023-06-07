@@ -5,6 +5,7 @@ import { apiUrl } from "../user/useUser";
 import { useDispatch } from "react-redux";
 import {
   hideLoaderActionCreator,
+  showErrorActionCreator,
   showLoaderActionCreator,
 } from "../../store/ui/uiSlice";
 
@@ -25,8 +26,13 @@ const useApi = () => {
 
       return teams;
     } catch {
-      const error = new Error("Can't get Teams");
-      throw error;
+      dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Can't get Teams",
+          isError: true,
+        })
+      );
     }
   }, [dispatch, token]);
 
