@@ -7,6 +7,10 @@ const theme: DefaultTheme = {
     primaryDark: "#1e193b",
     secondary: "#F2C65d",
     mainLight: "#ffffff",
+    modalError: "#ac5b5b",
+    modalErrorLight: "#e3b6b6cb",
+    modalOk: "#61935b",
+    modalOkLight: "#afeeb3c9",
   },
 
   fonts: {
@@ -18,6 +22,10 @@ const theme: DefaultTheme = {
     normal: "1.375rem",
     medium: "1.75rem",
     big: "2.18rem",
+  },
+
+  shadows: {
+    button: "0px 6px 6px #0000003f",
   },
 };
 

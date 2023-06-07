@@ -22,10 +22,10 @@ const LoaderStyled = styled.div`
     height: 100px;
     background: linear-gradient(
       165deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgb(220, 220, 220) 40%,
-      rgb(170, 170, 170) 98%,
-      rgb(10, 10, 10) 100%
+      #fff 0%,
+      #dcdcdc 40%,
+      #aaaaaa 98%,
+      #0a0a0a 100%
     );
     border-radius: 50%;
     position: relative;

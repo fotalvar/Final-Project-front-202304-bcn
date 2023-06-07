@@ -7,7 +7,7 @@ const ButtonStyled = styled.button`
   font-size: ${(props) => props.theme.fontSizes.normal};
   border-radius: 50px;
   border: none;
-  box-shadow: 0px 6px 6px #0000003f;
+  box-shadow: ${(props) => props.theme.shadows.button};
 
   &__login {
     background: ${(props) => props.theme.colors.primary};
