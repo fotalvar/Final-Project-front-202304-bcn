@@ -17,7 +17,7 @@ h5,
 h6,
 p {
   margin: 0;
-  font-family: "Inria Sans";
+  font-family: "Inria Sans", sans-serif;
 }
 
 a {

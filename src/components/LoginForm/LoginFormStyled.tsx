@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
 const LoginFormStyled = styled.form`
-  display: flex;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
   gap: 30px;
+  align-content: center;
 
   .login-form {
     &__controller {
@@ -16,7 +14,7 @@ const LoginFormStyled = styled.form`
       width: 280px;
       height: 55px;
       padding: 15px;
-      box-shadow: #00000075 0px 6px 10px 0px;
+      box-shadow: ${(props) => props.theme.shadows.button};
 
       &:focus {
         outline: solid 3px ${(props) => props.theme.colors.secondary};
@@ -26,12 +24,12 @@ const LoginFormStyled = styled.form`
     &__button {
       width: 180px;
       height: 55px;
-      background: #454071;
+      background: ${(props) => props.theme.colors.primary};
       color: ${(props) => props.theme.colors.mainLight};
       text-transform: uppercase;
       border: none;
       font-size: ${(props) => props.theme.fontSizes.normal};
-      box-shadow: 0px 6px 6px #0000003f;
+      box-shadow: ${(props) => props.theme.shadows.button};
       border-radius: 50px;
       transition: 0.5s;
 

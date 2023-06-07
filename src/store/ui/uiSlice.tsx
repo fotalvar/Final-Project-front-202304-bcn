@@ -33,7 +33,7 @@ const uiSlice = createSlice({
       ...currentUiState,
       isError: false,
       isVisible: false,
-      errorMessage: "",
+      errorMessage: "error",
     }),
   },
 });

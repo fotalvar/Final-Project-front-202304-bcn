@@ -15,15 +15,15 @@ const CardStyled = styled.ul`
 
     &__close {
       position: absolute;
-      background: rgb(38 28 28 / 66%);
-      border: 2px solid rgb(255 255 255 / 50%);
+      background: #1c262f66;
+      border: 2px solid ${(props) => props.theme.colors.mainLight};
       backdrop-filter: blur(4px);
       border-radius: 0px 10px;
       width: 48px;
       height: 48px;
       right: 0px;
       z-index: 1;
-      box-shadow: rgba(0, 0, 0, 0.44) -1px 5px 8px;
+      box-shadow: #00000070 -1px 5px 8px;
     }
 
     &__card {
@@ -51,7 +51,7 @@ const CardStyled = styled.ul`
       width: 100%;
       height: 50px;
       padding: 10px;
-      color: white;
+      color: ${(props) => props.theme.colors.mainLight};
       text-shadow: -1px -1px 4px #000000;
     }
 
@@ -63,12 +63,12 @@ const CardStyled = styled.ul`
 
     &__type {
       width: 224px;
-      background: #ffffff;
+      background: ${(props) => props.theme.colors.mainLight};
     }
 
     &__rating {
       width: 51px;
-      background: #f2c65d;
+      background: ${(props) => props.theme.colors.secondary};
     }
 
     &__rating,
@@ -76,7 +76,7 @@ const CardStyled = styled.ul`
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 4px 4px #0000003f;
       border-radius: 0px 0px 10px 10px;
       height: 35px;
     }

@@ -8,6 +8,10 @@ declare module "styled-components" {
       primaryDark: string;
       secondary: string;
       mainLight: string;
+      modalError: string;
+      modalErrorLight: string;
+      modalOk: string;
+      modalOkLight: string;
     };
 
     fonts: {
@@ -19,6 +23,10 @@ declare module "styled-components" {
       normal: string;
       medium: string;
       big: string;
+    };
+
+    shadows: {
+      button: string;
     };
   }
 }
