@@ -26,9 +26,7 @@ const LoginPage = (): React.ReactElement => {
 
     dispatch(loginUserActionCreator(userData));
 
-    if (localStorage.getItem("token")) {
-      navigate(paths.home, { replace: true });
-    }
+    navigate(paths.home, { replace: true });
   };
 
   return <LoginForm handleLoginSubmit={handleFormSubmit} />;

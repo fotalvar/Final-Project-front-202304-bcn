@@ -16,7 +16,7 @@ const CardStyled = styled.ul`
     &__close {
       position: absolute;
       background: #1c262f66;
-      border: 2px solid ${(props) => props.theme.colors.mainLight};
+      border: 2px solid #ffffff8e;
       backdrop-filter: blur(4px);
       border-radius: 0px 10px;
       width: 48px;

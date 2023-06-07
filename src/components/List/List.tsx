@@ -9,11 +9,18 @@ interface ListProps {
 const List = ({ teamProps }: ListProps): React.ReactElement => {
   return (
     <ListStyled className="teamCardsList">
-      {teamProps.map((teamCard) => (
-        <li key={teamCard.id}>
-          <Card team={teamCard} />
-        </li>
-      ))}
+      {teamProps.map((teamCard, index) => {
+        const isFirstCard = index <= 1;
+        return (
+          <li key={teamCard.id}>
+            {isFirstCard ? (
+              <Card team={teamCard} lazyLoading={false} />
+            ) : (
+              <Card team={teamCard} lazyLoading={true} />
+            )}
+          </li>
+        );
+      })}
     </ListStyled>
   );
 };
