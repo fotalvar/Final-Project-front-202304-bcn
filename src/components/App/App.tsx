@@ -15,7 +15,6 @@ const App = (): React.ReactElement => {
 
     if (token) {
       const userData = getTokenData(token);
-
       dispatch(loginUserActionCreator({ ...userData, token: token }));
     }
   }, [dispatch, getItemLocalStorage, getTokenData]);

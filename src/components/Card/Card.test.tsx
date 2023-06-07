@@ -10,7 +10,7 @@ describe("Given a Card component", () => {
 
       const team = teamMock[0];
 
-      renderWithProviders(<Card team={team} />);
+      renderWithProviders(<Card team={team} lazyLoading />);
 
       const cardText = screen.getByText(expectedText);
 

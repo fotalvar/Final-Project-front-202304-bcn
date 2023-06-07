@@ -4,10 +4,12 @@ import { TeamsStructure } from "../../store/teams/types";
 
 interface CardProps {
   team: TeamsStructure;
+  lazyLoading: boolean;
 }
 
 const Card = ({
   team: { bgimage, id, name, rating, type },
+  lazyLoading,
 }: CardProps): React.ReactElement => {
   return (
     <CardStyled>
@@ -28,7 +30,7 @@ const Card = ({
               className="team-card__teamImage"
               width="280"
               height="170"
-              loading="lazy"
+              loading={`${lazyLoading ? "lazy" : "eager"}`}
             />
             <h2 className="team-card__title">{name}</h2>
           </button>
