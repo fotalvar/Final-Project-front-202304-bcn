@@ -1,9 +1,9 @@
 import { renderHook } from "@testing-library/react";
 import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
-import useApi from "./useTeams";
 import { wrapper } from "../../utils/utils";
 import { server } from "../../mocks/server";
 import { errorHandlers } from "../../mocks/handlers";
+import useTeams from "./useTeams";
 
 describe("Given a getTeams function", () => {
   describe("When it is called", () => {
@@ -14,7 +14,7 @@ describe("Given a getTeams function", () => {
         result: {
           current: { getTeams },
         },
-      } = renderHook(() => useApi(), { wrapper: wrapper });
+      } = renderHook(() => useTeams(), { wrapper: wrapper });
 
       const teamsList = await getTeams();
 
@@ -30,7 +30,7 @@ describe("Given a getTeams function", () => {
         result: {
           current: { getTeams },
         },
-      } = renderHook(() => useApi(), { wrapper: wrapper });
+      } = renderHook(() => useTeams(), { wrapper: wrapper });
 
       const error = await getTeams();
 

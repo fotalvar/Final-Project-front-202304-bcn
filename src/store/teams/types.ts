@@ -1,5 +1,5 @@
 export interface TeamsStructure {
-  id?: string;
+  id: string;
   name: string;
   description: string;
   character1: string;
