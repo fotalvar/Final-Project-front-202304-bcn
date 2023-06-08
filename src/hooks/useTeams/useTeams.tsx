@@ -38,12 +38,16 @@ const useTeams = () => {
   }, [dispatch, token]);
 
   const deleteTeam = async (teamId: string) => {
-    try {
-      dispatch(showLoaderActionCreator());
+    dispatch(showLoaderActionCreator());
 
-      await axios.delete(`${apiUrl}${paths.home}/${teamId}`),
-        { headers: { Authorization: `Bearer ${token}}` } };
+    try {
+      const { status } = await axios.delete(
+        `${apiUrl}${paths.home}/${teamId}`,
+        { headers: { Authorization: `Bearer ${token}}` } }
+      );
       dispatch(hideLoaderActionCreator());
+
+      return status;
     } catch {
       dispatch(hideLoaderActionCreator());
       dispatch(
