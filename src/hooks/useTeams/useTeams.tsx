@@ -38,12 +38,21 @@ const useTeams = () => {
   }, [dispatch, token]);
 
   const deleteTeam = async (teamId: string) => {
-    await axios.delete(`${apiUrl}${paths.home}/${teamId}`),
-      { headers: { Authorization: `Bearer ${token}}` } };
-    showErrorActionCreator({
-      errorMessage: "Team deleted",
-      isError: true,
-    });
+    try {
+      dispatch(showLoaderActionCreator());
+
+      await axios.delete(`${apiUrl}${paths.home}/${teamId}`),
+        { headers: { Authorization: `Bearer ${token}}` } };
+      dispatch(hideLoaderActionCreator());
+    } catch {
+      dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Team deleted",
+          isError: true,
+        })
+      );
+    }
   };
   return { getTeams, deleteTeam };
 };
