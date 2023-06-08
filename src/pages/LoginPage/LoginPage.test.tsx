@@ -29,11 +29,11 @@ describe("Given a LoginPage page", () => {
 
   describe("When the user submit the form with a valid credentials", () => {
     test("Then it should redirect the user to the home page", async () => {
-      const expectedText = "Teams";
+      const expectedText = "fede`s Teams";
 
       const mockUser: UserCredentials = {
-        username: "admin",
-        password: "admin",
+        username: "fede",
+        password: "fede",
       };
       const routes: RouteObject[] = [
         {
@@ -71,7 +71,9 @@ describe("Given a LoginPage page", () => {
 
       const heading = screen.getByRole("heading", { level: 1 });
 
-      expect(heading.textContent).toContain(expectedText);
+      screen.debug();
+
+      expect(heading.textContent).toBe(expectedText);
     });
   });
 });

@@ -1,5 +1,9 @@
-import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
-import { loadTeamsActionCreator, teamsReducer } from "./teamsSlice";
+import { teamListMock, teamMock } from "../../mocks/teamsMocks/teamsMocks";
+import {
+  deleteTeamActionCreator,
+  loadTeamsActionCreator,
+  teamsReducer,
+} from "./teamsSlice";
 import { TeamsState, TeamsStructure } from "./types";
 
 describe("Given an loadTeams function", () => {
@@ -19,6 +23,22 @@ describe("Given an loadTeams function", () => {
       const newState: TeamsState = teamsReducer(currentState, Teams);
 
       expect(expectedNewTeamsState).toStrictEqual(newState);
+    });
+  });
+});
+
+describe("Given a deleteTeam reducer", () => {
+  describe("When it is called with a current team state and an action with an id", () => {
+    test("Then it should return the team list without the team with this id", () => {
+      const currentState = teamListMock;
+      const newDeletedTeamState = { ...teamListMock, teams: [] };
+
+      const newTeamState = teamsReducer(
+        currentState,
+        deleteTeamActionCreator(currentState.teams[0].id)
+      );
+
+      expect(newTeamState).toStrictEqual(newDeletedTeamState);
     });
   });
 });

@@ -1,15 +1,15 @@
 import ListPageStyled from "./ListPageStyled";
 import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import useApi from "../../hooks/useTeams/useTeams";
 import { useEffect } from "react";
 import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
+import useTeams from "../../hooks/useTeams/useTeams";
 
 const ListPage = (): React.ReactElement => {
   const { name } = useAppSelector((state) => state.userStore);
   const team = useAppSelector((state) => state.teamsStore);
 
-  const { getTeams } = useApi();
+  const { getTeams } = useTeams();
   const dispatch = useAppDispatch();
 
   useEffect(() => {

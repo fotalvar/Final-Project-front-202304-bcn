@@ -8,8 +8,9 @@ import {
   showErrorActionCreator,
   showLoaderActionCreator,
 } from "../../store/ui/uiSlice";
+import paths from "../../routers/paths/paths";
 
-const useApi = () => {
+const useTeams = () => {
   const { token } = useAppSelector((state) => state.userStore);
 
   const dispatch = useDispatch();
@@ -36,7 +37,27 @@ const useApi = () => {
     }
   }, [dispatch, token]);
 
-  return { getTeams };
-};
+  const deleteTeam = async (teamId: string) => {
+    dispatch(showLoaderActionCreator());
 
-export default useApi;
+    try {
+      const { status } = await axios.delete(
+        `${apiUrl}${paths.home}/${teamId}`,
+        { headers: { Authorization: `Bearer ${token}}` } }
+      );
+      dispatch(hideLoaderActionCreator());
+
+      return status;
+    } catch {
+      dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Team deleted",
+          isError: true,
+        })
+      );
+    }
+  };
+  return { getTeams, deleteTeam };
+};
+export default useTeams;
