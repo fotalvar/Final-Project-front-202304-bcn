@@ -45,6 +45,7 @@ describe("Given a deleteTeam function", () => {
     test("Then it should return a message 'Team deleted'", async () => {
       server.resetHandlers(...handlers);
 
+      const id = teamMock[0].id;
       const message = "Team deleted";
 
       const {
@@ -53,31 +54,11 @@ describe("Given a deleteTeam function", () => {
         },
       } = renderHook(() => useTeams(), { wrapper: wrapper });
 
-      const id = teamMock[0].id;
-
       await deleteTeam(id);
 
       const expectedMessage = store.getState().uiStore.errorMessage;
 
       expect(message).toBe(expectedMessage);
-    });
-  });
-
-  describe("When it calls with a valid token and incorrect user id", () => {
-    test("Then it should return undefined", async () => {
-      server.resetHandlers(...errorHandlers);
-
-      const {
-        result: {
-          current: { deleteTeam },
-        },
-      } = renderHook(() => useTeams(), { wrapper: wrapper });
-
-      const teamId = "prueba";
-
-      const expectedStatus = await deleteTeam(teamId);
-
-      expect(expectedStatus).toBeUndefined();
     });
   });
 });

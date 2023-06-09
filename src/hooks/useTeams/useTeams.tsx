@@ -24,12 +24,6 @@ const useTeams = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(hideLoaderActionCreator());
-      dispatch(
-        showErrorActionCreator({
-          errorMessage: "Team Deleted",
-          isError: true,
-        })
-      );
 
       return teams;
     } catch {
@@ -54,14 +48,20 @@ const useTeams = () => {
         }
       );
       dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Team deleted",
+          isError: false,
+        })
+      );
 
       return status;
     } catch {
       dispatch(hideLoaderActionCreator());
       dispatch(
         showErrorActionCreator({
-          errorMessage: "Team deleted",
-          isError: false,
+          errorMessage: "Can't delete Team",
+          isError: true,
         })
       );
     }
