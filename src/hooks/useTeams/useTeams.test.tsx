@@ -62,3 +62,26 @@ describe("Given a deleteTeam function", () => {
     });
   });
 });
+
+describe("Given a deleteTeam function", () => {
+  describe("When it calls with a incorrect user id", () => {
+    test("Then it should return a message 'Can`t delete Team'", async () => {
+      server.resetHandlers(...errorHandlers);
+
+      const id = "33";
+      const message = "Can't delete Team";
+
+      const {
+        result: {
+          current: { deleteTeam },
+        },
+      } = renderHook(() => useTeams(), { wrapper: wrapper });
+
+      await deleteTeam(id);
+
+      const expectedMessage = store.getState().uiStore.errorMessage;
+
+      expect(message).toBe(expectedMessage);
+    });
+  });
+});
