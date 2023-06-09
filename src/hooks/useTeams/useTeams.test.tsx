@@ -2,8 +2,9 @@ import { renderHook } from "@testing-library/react";
 import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
 import { wrapper } from "../../utils/utils";
 import { server } from "../../mocks/server";
-import { errorHandlers } from "../../mocks/handlers";
+import { errorHandlers, handlers } from "../../mocks/handlers";
 import useTeams from "./useTeams";
+import { store } from "../../store";
 
 describe("Given a getTeams function", () => {
   describe("When it is called", () => {
@@ -40,19 +41,25 @@ describe("Given a getTeams function", () => {
 });
 
 describe("Given a deleteTeam function", () => {
-  describe("When it calls with a valid token and correct user id", () => {
-    test("Then it should return a status code 200", async () => {
+  describe("When it calls with a correct user id", () => {
+    test("Then it should return a message 'Team deleted'", async () => {
+      server.resetHandlers(...handlers);
+
+      const message = "Team deleted";
+
       const {
         result: {
           current: { deleteTeam },
         },
       } = renderHook(() => useTeams(), { wrapper: wrapper });
 
-      const teamId = teamMock[0].id;
-      const status = 200;
-      const expectedStatus = await deleteTeam(teamId);
+      const id = teamMock[0].id;
 
-      expect(status).toBe(expectedStatus);
+      await deleteTeam(id);
+
+      const expectedMessage = store.getState().uiStore.errorMessage;
+
+      expect(message).toBe(expectedMessage);
     });
   });
 

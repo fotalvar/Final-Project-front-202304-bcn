@@ -8,7 +8,7 @@ const ContainerStyled = styled.div`
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  background-image: url("../images/background.webp");
+  background-image: url("/images/background.webp");
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
