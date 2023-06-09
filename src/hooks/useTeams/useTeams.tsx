@@ -47,6 +47,12 @@ const useTeams = () => {
           headers: { Authorization: `Bearer ${token}}` },
         }
       );
+
+      if (!status) {
+        const error = new Error("Can't delete Team");
+        throw error;
+      }
+
       dispatch(hideLoaderActionCreator());
       dispatch(
         showErrorActionCreator({
@@ -56,7 +62,7 @@ const useTeams = () => {
       );
 
       return status;
-    } catch {
+    } catch (error) {
       dispatch(hideLoaderActionCreator());
       dispatch(
         showErrorActionCreator({
