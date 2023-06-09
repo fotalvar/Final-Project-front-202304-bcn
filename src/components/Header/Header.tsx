@@ -6,7 +6,7 @@ const Header = (): React.ReactElement => {
     <HeaderStyled>
       <Nav />
       <img
-        src="../images/logo.svg"
+        src="/images/logo.svg"
         alt="Teams Impact logo"
         width="85"
         height="45"

@@ -30,7 +30,7 @@ const Nav = (): React.ReactElement => {
         <li className="nav__item">
           <NavLink to="/user/home">
             <img
-              src="../images/icons/home.svg"
+              src="/images/icons/home.svg"
               alt="Home page"
               width="30"
               height="30"
@@ -41,7 +41,7 @@ const Nav = (): React.ReactElement => {
           <button onClick={logOutOnClick} className="nav__logout_button">
             Logout
             <img
-              src="../images/icons/logout.svg"
+              src="/images/icons/logout.svg"
               alt="Log out"
               width="30"
               height="30"
