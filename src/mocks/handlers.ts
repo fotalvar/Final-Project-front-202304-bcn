@@ -13,9 +13,12 @@ export const handlers = [
     return res(ctx.status(200), ctx.json({ teams: teamMock }));
   }),
 
-  rest.delete(`${apiUrl}${paths.home}/:id`, (_req, res, ctx) => {
-    return res(ctx.status(200), ctx.json("Team deleted"));
-  }),
+  rest.delete(
+    `${apiUrl}${paths.teams}/${paths.delete}/:id`,
+    (_req, res, ctx) => {
+      return res(ctx.status(200), ctx.json("Team deleted"));
+    }
+  ),
 ];
 
 export const errorHandlers = [

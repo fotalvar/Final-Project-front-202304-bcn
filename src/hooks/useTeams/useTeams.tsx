@@ -24,6 +24,12 @@ const useTeams = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Team Deleted",
+          isError: true,
+        })
+      );
 
       return teams;
     } catch {
@@ -42,8 +48,10 @@ const useTeams = () => {
 
     try {
       const { status } = await axios.delete(
-        `${apiUrl}${paths.home}/${teamId}`,
-        { headers: { Authorization: `Bearer ${token}}` } }
+        `${apiUrl}${paths.teams}${paths.delete}/${teamId}`,
+        {
+          headers: { Authorization: `Bearer ${token}}` },
+        }
       );
       dispatch(hideLoaderActionCreator());
 
@@ -53,7 +61,7 @@ const useTeams = () => {
       dispatch(
         showErrorActionCreator({
           errorMessage: "Team deleted",
-          isError: true,
+          isError: false,
         })
       );
     }

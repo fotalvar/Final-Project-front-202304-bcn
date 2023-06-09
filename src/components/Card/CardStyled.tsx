@@ -13,7 +13,7 @@ const CardStyled = styled.ul`
       box-shadow: #00000070 0 8px 8px;
     }
 
-    &__close {
+    &__delete {
       position: absolute;
       background: #1c262f66;
       border: 2px solid #ffffff8e;
