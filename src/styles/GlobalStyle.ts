@@ -47,6 +47,11 @@ button{
 input{
   font-family: inherit;
 }
+
+.modal__container{
+  display: grid;
+  place-items: center;
+}
 `;
 
 export default GlobalStyle;

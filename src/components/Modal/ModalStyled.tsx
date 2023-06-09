@@ -70,6 +70,11 @@ const ModalStyled = styled.div`
       opacity: 1;
     }
   }
+
+  .modal__container {
+    display: grid;
+    place-items: center;
+  }
 `;
 
 export default ModalStyled;

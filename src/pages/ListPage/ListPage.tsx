@@ -6,18 +6,30 @@ import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 import useTeams from "../../hooks/useTeams/useTeams";
 
 const ListPage = (): React.ReactElement => {
-  const { name } = useAppSelector((state) => state.userStore);
-  const team = useAppSelector((state) => state.teamsStore);
-
   const { getTeams } = useTeams();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     (async () => {
       const teams = await getTeams();
-      dispatch(loadTeamsActionCreator(teams));
+
+      if (teams) {
+        dispatch(loadTeamsActionCreator(teams));
+
+        const preconnectElement = await document.createElement("link");
+        preconnectElement.rel = "preload";
+        preconnectElement.as = "image";
+        preconnectElement.href = teams[0].bgimage;
+
+        const parent = document.head;
+        const firstChild = document.head.firstChild;
+        parent.insertBefore(preconnectElement, firstChild);
+      }
     })();
   }, [dispatch, getTeams]);
+
+  const { name } = useAppSelector((state) => state.userStore);
+  const team = useAppSelector((state) => state.teamsStore);
 
   return (
     <ListPageStyled className="teamsList">

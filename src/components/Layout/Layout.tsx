@@ -12,12 +12,14 @@ const Layout = (): React.ReactElement => {
   const { isLoading, isVisible } = useAppSelector((state) => state.uiStore);
 
   return (
-    <ContainerStyled>
+    <>
+      <ContainerStyled>
+        {location.pathname === paths.login || <Header />}
+        <Outlet />
+      </ContainerStyled>
       {isLoading && <Loader />}
-      {location.pathname === paths.login || <Header />}
       {isVisible && <Modal />}
-      <Outlet />
-    </ContainerStyled>
+    </>
   );
 };
 
