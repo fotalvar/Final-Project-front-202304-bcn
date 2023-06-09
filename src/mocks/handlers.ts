@@ -23,6 +23,6 @@ export const errorHandlers = [
   }),
 
   rest.delete(`${apiUrl}/teams/delete/:id`, (_req, res, ctx) => {
-    return res(ctx.status(404));
+    return res(ctx.status(404), ctx.json({ message: "Can't delete Team" }));
   }),
 ];
