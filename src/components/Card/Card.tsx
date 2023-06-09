@@ -18,8 +18,8 @@ const Card = ({
   const { deleteTeam } = useTeams();
 
   const handleOnDelete = async () => {
-    dispatch(deleteTeamActionCreator(id));
     await deleteTeam(id);
+    dispatch(deleteTeamActionCreator(id));
   };
 
   return (
