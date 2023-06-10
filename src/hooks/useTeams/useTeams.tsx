@@ -44,7 +44,7 @@ const useTeams = () => {
       const { status } = await axios.delete(
         `${apiUrl}${paths.teams}${paths.delete}/${teamId}`,
         {
-          headers: { Authorization: `Bearer ${token}}` },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
 
