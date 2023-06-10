@@ -13,7 +13,7 @@ export interface DecodedTokenStructure {
   name: string;
 }
 
-export interface TeamsStateFede {
+export interface TeamsState {
   id: string;
 }
 
