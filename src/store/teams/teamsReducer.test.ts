@@ -1,5 +1,10 @@
-import { teamListMock, teamMock } from "../../mocks/teamsMocks/teamsMocks";
 import {
+  addTeamMock,
+  teamListMock,
+  teamMock,
+} from "../../mocks/teamsMocks/teamsMocks";
+import {
+  addTeamActionCreator,
   deleteTeamActionCreator,
   loadTeamsActionCreator,
   teamsReducer,
@@ -39,6 +44,29 @@ describe("Given a deleteTeam reducer", () => {
       );
 
       expect(newTeamState).toStrictEqual(newDeletedTeamState);
+    });
+  });
+});
+
+describe("Given a AddTeam reducer", () => {
+  describe("When it is called with a current team state, an an action", () => {
+    test("Then it should return the new state with the new team", () => {
+      const teams = teamMock;
+
+      const currentState: TeamsState = {
+        teams: teams,
+      };
+
+      const expectedNewTeamsState: TeamsState = {
+        ...currentState,
+        teams: [...currentState.teams, addTeamMock],
+      };
+
+      const addTeam = addTeamActionCreator(addTeamMock);
+
+      const newState = teamsReducer(currentState, addTeam);
+
+      expect(newState).toStrictEqual(expectedNewTeamsState);
     });
   });
 });
