@@ -5,6 +5,7 @@ const paths = {
   error: "/*",
   teams: "/teams",
   delete: "/delete",
+  add: "/add",
 };
 
 export default paths;

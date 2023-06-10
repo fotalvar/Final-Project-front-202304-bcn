@@ -3,6 +3,7 @@ import App from "../components/App/App";
 import paths from "./paths/paths";
 import { Suspense } from "react";
 import { LazyErrorPage, LazyListPage, LazyLoginPage } from "./lazyPages";
+import AddPage from "../pages/AddPage/AddPage";
 
 const routes: RouteObject[] = [
   {
@@ -31,6 +32,14 @@ const routes: RouteObject[] = [
         element: (
           <Suspense>
             <LazyErrorPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: paths.add,
+        element: (
+          <Suspense>
+            <AddPage />
           </Suspense>
         ),
       },
