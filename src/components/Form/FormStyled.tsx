@@ -29,6 +29,9 @@ const FormStyled = styled.form`
       font-family: inherit;
     }
 
+    &__description {
+    }
+
     &__button {
       background-color: ${(props) => props.theme.colors.secondary};
       margin: 15px 0 35px 0;

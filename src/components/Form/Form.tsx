@@ -41,12 +41,13 @@ const Form = (): React.ReactElement => {
           onChange={onChangeForm}
         ></input>
       </label>
-      <label className="form__label">
+      <label className="form__label" htmlFor="description">
         Description
         <textarea
           className="form__description"
           value={teamData.description}
           onChange={onChangeForm}
+          id="description"
         ></textarea>
       </label>
       <label className="form__label">
