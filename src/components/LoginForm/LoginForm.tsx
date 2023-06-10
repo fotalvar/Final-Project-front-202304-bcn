@@ -27,41 +27,43 @@ const LoginForm = ({
   const isDisabled = !loginData.username || !loginData.password;
 
   return (
-    <LoginFormStyled
-      className="login-form"
-      autoComplete="off"
-      onSubmit={handleSubmit}
-    >
-      <img
-        src="../images/logo.svg"
-        alt="Teams Impact logo"
-        width="180"
-        height="95"
-      />
-      <input
-        className="login-form__controller"
-        type="text"
-        placeholder="Username"
-        id="username"
-        value={loginData.username}
-        onChange={onChangeLogin}
-      />
-      <input
-        className="login-form__controller"
-        type="password"
-        placeholder="Password"
-        id="password"
-        value={loginData.password}
-        onChange={onChangeLogin}
-      />
-      <button
-        className="login-form__button"
-        type="submit"
-        disabled={isDisabled}
+    <>
+      <LoginFormStyled
+        className="login-form"
+        autoComplete="off"
+        onSubmit={handleSubmit}
       >
-        login
-      </button>
-    </LoginFormStyled>
+        <img
+          src="../images/logo.svg"
+          alt="Teams Impact logo"
+          width="180"
+          height="95"
+        />
+        <input
+          className="login-form__controller"
+          type="text"
+          placeholder="Username"
+          id="username"
+          value={loginData.username}
+          onChange={onChangeLogin}
+        />
+        <input
+          className="login-form__controller"
+          type="password"
+          placeholder="Password"
+          id="password"
+          value={loginData.password}
+          onChange={onChangeLogin}
+        />
+        <button
+          className="login-form__button"
+          type="submit"
+          disabled={isDisabled}
+        >
+          login
+        </button>
+      </LoginFormStyled>
+    </>
   );
 };
 

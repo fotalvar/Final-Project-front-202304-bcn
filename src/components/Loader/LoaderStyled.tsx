@@ -35,6 +35,14 @@ const LoaderStyled = styled.div`
     top: 30vh;
     justify-content: center;
     align-items: center;
+
+    &__icon {
+      animation: rotate-vert-center 1.5s cubic-bezier(0.645, 0.045, 0.355, 1)
+        infinite both;
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
+    }
   }
 
   .loader:before {
@@ -69,6 +77,17 @@ const LoaderStyled = styled.div`
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes rotate-vert-center {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+      transform: rotateY(360deg);
     }
   }
 `;

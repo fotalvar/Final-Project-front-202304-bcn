@@ -17,12 +17,21 @@ export const teamsSlice = createSlice({
       ...currentState,
       teams: currentState.teams.filter((teams) => teams.id !== action.payload),
     }),
+
+    addTeam: (
+      currentTeams: TeamsState,
+      action: PayloadAction<TeamsStructure>
+    ): TeamsState => ({
+      ...currentTeams,
+      teams: [...currentTeams.teams, action.payload],
+    }),
   },
 });
 
 export const {
   loadTeams: loadTeamsActionCreator,
   deleteTeam: deleteTeamActionCreator,
+  addTeam: addTeamActionCreator,
 } = teamsSlice.actions;
 
 export const teamsReducer = teamsSlice.reducer;
