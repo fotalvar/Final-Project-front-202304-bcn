@@ -4,7 +4,7 @@ const LoaderStyled = styled.div`
   background-color: #00000083;
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 15;
   backdrop-filter: blur(5px);

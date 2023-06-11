@@ -16,22 +16,22 @@ const CardStyled = styled.ul`
     &__delete {
       position: absolute;
       background: #1c262f66;
-      border: 2px solid #ffffff8e;
+      border: 2px solid rgb(255 255 255 / 11%);
       backdrop-filter: blur(4px);
       border-radius: 0px 10px;
       width: 48px;
       height: 48px;
       right: 0px;
       z-index: 1;
-      box-shadow: #00000070 -1px 5px 8px;
+      box-shadow: #000000b0 -1px 5px 8px;
+      border-right: none;
+      border-top: none;
     }
 
     &__card {
       border: none;
       padding: 0;
       position: relative;
-      background: none;
-      border: 2px solid #ffffff8e;
       border-radius: 10px 10px 0 0;
       border-bottom: none;
     }
