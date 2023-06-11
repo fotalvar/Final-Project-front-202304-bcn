@@ -5,15 +5,21 @@ interface ButtonProps {
   actionOnClick?: () => void;
   className: string;
   type?: string;
+  isDisabled?: boolean;
 }
 
 const Button = ({
   text,
   actionOnClick,
   className,
+  isDisabled,
 }: ButtonProps): React.ReactElement => {
   return (
-    <ButtonStyled onClick={actionOnClick} className={className}>
+    <ButtonStyled
+      onClick={actionOnClick}
+      className={className}
+      disabled={isDisabled}
+    >
       {text}
     </ButtonStyled>
   );

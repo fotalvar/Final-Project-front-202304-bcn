@@ -9,6 +9,7 @@ import {
   showLoaderActionCreator,
 } from "../../store/ui/uiSlice";
 import paths from "../../routers/paths/paths";
+import { TeamsStructure } from "../../store/teams/types";
 
 const useTeams = () => {
   const { token } = useAppSelector((state) => state.userStore);
@@ -72,6 +73,34 @@ const useTeams = () => {
       );
     }
   };
-  return { getTeams, deleteTeam };
+
+  const addTeam = async (
+    teamData: Partial<TeamsStructure>
+  ): Promise<TeamsStructure> => {
+    try {
+      dispatch(showLoaderActionCreator());
+      const { data: newTeam } = await axios.post<TeamsStructure>(
+        `${apiUrl}${paths.teams}${paths.add}`,
+        teamData,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+
+      dispatch(hideLoaderActionCreator());
+      return newTeam;
+    } catch (error: unknown) {
+      dispatch(hideLoaderActionCreator());
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Can't add Team",
+          isError: true,
+        })
+      );
+      throw "Can't add Team";
+    }
+  };
+
+  return { getTeams, deleteTeam, addTeam };
 };
 export default useTeams;

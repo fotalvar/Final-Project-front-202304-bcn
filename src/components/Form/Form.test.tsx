@@ -14,7 +14,7 @@ describe("Given a Form component", () => {
         "Team Image",
       ];
 
-      renderWithProviders(<Form />);
+      renderWithProviders(<Form onSubmit={() => ({})} />);
 
       labels.forEach((labels) => {
         const label = screen.getByLabelText(labels);
