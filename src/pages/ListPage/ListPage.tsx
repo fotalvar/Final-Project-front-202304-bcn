@@ -42,7 +42,7 @@ const ListPage = (): React.ReactElement => {
     <ListPageStyled className="teamsList">
       <h1 className="teamsList__title">{name}`s Teams</h1>
       <section className="teamsList__filter">
-        <select className="teamsList__rankList">
+        <select className="teamsList__rankList" disabled>
           <option defaultValue="ranks">All rank levels</option>
           <option value="a">A</option>
           <option value="b">B</option>

@@ -13,4 +13,5 @@ export interface TeamsStructure {
 
 export interface TeamsState {
   teams: TeamsStructure[];
+  limit: number;
 }

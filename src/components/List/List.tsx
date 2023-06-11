@@ -1,6 +1,8 @@
+import { useAppDispatch } from "../../store";
+import { loadMoreActionCreator } from "../../store/teams/teamsSlice";
 import { TeamsStructure } from "../../store/teams/types";
-import Button from "../Button/Button";
 import Card from "../Card/Card";
+import LoadMore from "../LoadMore/LoadMore";
 import ListStyled from "./ListStyled";
 
 interface ListProps {
@@ -8,6 +10,12 @@ interface ListProps {
 }
 
 const List = ({ teamProps }: ListProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+
+  const handleLoadMore = () => {
+    dispatch(loadMoreActionCreator());
+  };
+
   return (
     <ListStyled className="teamCardsList">
       {teamProps.map((teamCard, index) => {
@@ -22,7 +30,7 @@ const List = ({ teamProps }: ListProps): React.ReactElement => {
           </li>
         );
       })}
-      <Button className="button__load-more" text="load more" />
+      <LoadMore onClick={handleLoadMore} />;
     </ListStyled>
   );
 };

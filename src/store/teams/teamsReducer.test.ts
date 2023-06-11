@@ -16,13 +16,14 @@ describe("Given an loadTeams function", () => {
     test("Then it should return the new state a list with 2 Teams", () => {
       const initialTeamsState: TeamsStructure[] = [];
 
-      const currentState: TeamsState = { teams: initialTeamsState };
+      const currentState: TeamsState = { teams: initialTeamsState, limit: 0 };
 
       const Teams = loadTeamsActionCreator(teamMock);
 
       const expectedNewTeamsState: TeamsState = {
         ...initialTeamsState,
         teams: teamMock,
+        limit: 0,
       };
 
       const newState: TeamsState = teamsReducer(currentState, Teams);
@@ -55,11 +56,13 @@ describe("Given a AddTeam reducer", () => {
 
       const currentState: TeamsState = {
         teams: teams,
+        limit: 0,
       };
 
       const expectedNewTeamsState: TeamsState = {
         ...currentState,
         teams: [...currentState.teams, addTeamMock],
+        limit: 0,
       };
 
       const addTeam = addTeamActionCreator(addTeamMock);

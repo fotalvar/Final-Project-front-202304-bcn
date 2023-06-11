@@ -5,7 +5,7 @@ const LoginFormStyled = styled.form`
   place-items: center;
   gap: 30px;
   align-content: center;
-  animation: fade-in-top 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: ${(props) => props.theme.animation.page};
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }

@@ -25,7 +25,9 @@ describe("Given a Card component", () => {
       const expectedTeamName = "On Fire !";
       const buttonName = "remove icon";
 
-      renderWithProviders(<ListPage />, { teamsStore: { teams: teamMock } });
+      renderWithProviders(<ListPage />, {
+        teamsStore: { teams: teamMock, limit: 0 },
+      });
 
       const button = screen.getAllByRole("button", { name: buttonName });
 

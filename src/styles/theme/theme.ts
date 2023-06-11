@@ -29,7 +29,7 @@ export const theme: DefaultTheme = {
   },
 
   animation: {
-    page: "fade-in-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both",
+    page: "fade-in-top 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53) both",
   },
 
   keyframes: {

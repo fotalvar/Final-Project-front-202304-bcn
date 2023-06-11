@@ -13,7 +13,7 @@ import { TeamsStructure } from "../../store/teams/types";
 
 const useTeams = () => {
   const { token } = useAppSelector((state) => state.userStore);
-
+  const { limit } = useAppSelector((state) => state.teamsStore);
   const dispatch = useDispatch();
 
   const getTeams = useCallback(async () => {
@@ -21,7 +21,7 @@ const useTeams = () => {
       dispatch(showLoaderActionCreator());
       const {
         data: { teams },
-      } = await axios.get(`${apiUrl}/teams`, {
+      } = await axios.get(`${apiUrl}/teams?limit=${limit}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(hideLoaderActionCreator());
@@ -36,7 +36,7 @@ const useTeams = () => {
         })
       );
     }
-  }, [dispatch, token]);
+  }, [dispatch, token, limit]);
 
   const deleteTeam = async (teamId: string) => {
     dispatch(showLoaderActionCreator());

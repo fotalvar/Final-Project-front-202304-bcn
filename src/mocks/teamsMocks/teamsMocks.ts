@@ -76,6 +76,7 @@ export const teamListMock: TeamsState = {
         "https://cdn.shopify.com/s/files/1/0554/2664/6129/articles/All-Pyro-Characters-Ranked-in-Genshin-Impact.webp",
     },
   ],
+  limit: 0,
 };
 
 export const singleTeamMock: Partial<TeamsStructure> = {
