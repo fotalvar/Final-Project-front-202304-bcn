@@ -1,5 +1,5 @@
 import userEvent from "@testing-library/user-event";
-import { screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import renderWithProviders from "../../utils/testUtils";
 import Form from "./Form";
 import { TeamsStructure } from "../../store/teams/types";
@@ -113,6 +113,24 @@ describe("Given a Form component", () => {
       await userEvent.click(button);
 
       expect(location.pathname).toBe("/");
+    });
+  });
+
+  describe("When the user writes an image url", () => {
+    test('renders with default image when "onError" event is triggered', async () => {
+      renderWithProviders(<Form onSubmit={onSubmit} />);
+
+      const bgimage = screen.getByLabelText("Team Image");
+      await userEvent.type(bgimage, "http://test");
+
+      const image = screen.getByAltText("Team thumbnail");
+
+      expect(image).toBeInTheDocument();
+      expect(image).toHaveAttribute("src", "http://test");
+
+      fireEvent.error(image);
+
+      expect(image).toHaveAttribute("src", "/images/no-image.svg");
     });
   });
 });
