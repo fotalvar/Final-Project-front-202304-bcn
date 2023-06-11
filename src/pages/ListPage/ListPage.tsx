@@ -4,10 +4,17 @@ import List from "../../components/List/List";
 import { useEffect } from "react";
 import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
 import useTeams from "../../hooks/useTeams/useTeams";
+import { useNavigate } from "react-router-dom";
+import paths from "../../routers/paths/paths";
 
 const ListPage = (): React.ReactElement => {
   const { getTeams } = useTeams();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+
+  const addTeamOnClick = (): void => {
+    navigate(paths.add);
+  };
 
   useEffect(() => {
     (async () => {
@@ -44,7 +51,7 @@ const ListPage = (): React.ReactElement => {
           <option value="s">S</option>
           <option value="ss">SS</option>
         </select>
-        <button className="teamsList__addButton">
+        <button className="teamsList__addButton" onClick={addTeamOnClick}>
           {" "}
           <img
             src="../images/icons/add.svg"
