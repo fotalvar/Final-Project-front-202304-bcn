@@ -90,6 +90,12 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
           <option value="Barbara">Barbara</option>
+          <option value="Jean">Jean</option>
+          <option value="Keqing">Keqing</option>
+          <option value="Klee">Klee</option>
+          <option value="Mona">Mona</option>
+          <option value="Qiqi">Qiqi</option>
+          <option value="Razor">Razor</option>
         </select>
       </label>
 
@@ -106,6 +112,12 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
           <option value="Barbara">Barbara</option>
+          <option value="Jean">Jean</option>
+          <option value="Keqing">Keqing</option>
+          <option value="Klee">Klee</option>
+          <option value="Mona">Mona</option>
+          <option value="Qiqi">Qiqi</option>
+          <option value="Razor">Razor</option>
         </select>
       </label>
 
@@ -122,6 +134,12 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
           <option value="Barbara">Barbara</option>
+          <option value="Jean">Jean</option>
+          <option value="Keqing">Keqing</option>
+          <option value="Klee">Klee</option>
+          <option value="Mona">Mona</option>
+          <option value="Qiqi">Qiqi</option>
+          <option value="Razor">Razor</option>
         </select>
       </label>
 
@@ -138,6 +156,12 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
           <option value="Barbara">Barbara</option>
+          <option value="Jean">Jean</option>
+          <option value="Keqing">Keqing</option>
+          <option value="Klee">Klee</option>
+          <option value="Mona">Mona</option>
+          <option value="Qiqi">Qiqi</option>
+          <option value="Razor">Razor</option>
         </select>
       </label>
 
@@ -172,6 +196,11 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Explorer">Explorer</option>
           <option value="Fighter">Fighter</option>
           <option value="Suport">Suport</option>
+          <option value="Mage">Mage</option>
+          <option value="Tank">Tank</option>
+          <option value="Assassin">Assassin</option>
+          <option value="Healer">Healer</option>
+          <option value="Archer">Archer</option>
         </select>
       </label>
 
