@@ -1,6 +1,6 @@
 import { DefaultTheme } from "styled-components";
 
-const theme: DefaultTheme = {
+export const theme: DefaultTheme = {
   colors: {
     primary: "#454071",
     primaryLight: "#8C8fA3",
@@ -26,6 +26,15 @@ const theme: DefaultTheme = {
 
   shadows: {
     button: "0px 6px 6px #0000003f",
+  },
+
+  animation: {
+    page: "fade-in-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both",
+  },
+
+  keyframes: {
+    fadeInTop:
+      "{0% {transform: translateY(-50px); opacity: 0;}100% {transform: translateY(0); opacity: 1;}}",
   },
 };
 

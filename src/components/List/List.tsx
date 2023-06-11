@@ -1,4 +1,5 @@
 import { TeamsStructure } from "../../store/teams/types";
+import Button from "../Button/Button";
 import Card from "../Card/Card";
 import ListStyled from "./ListStyled";
 
@@ -21,6 +22,7 @@ const List = ({ teamProps }: ListProps): React.ReactElement => {
           </li>
         );
       })}
+      <Button className="button__load-more" text="load more" />
     </ListStyled>
   );
 };

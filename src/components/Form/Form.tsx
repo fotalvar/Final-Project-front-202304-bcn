@@ -51,7 +51,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
     !teamData.bgimage;
 
   return (
-    <FormStyled className="form" onSubmit={handleOnSubmit}>
+    <FormStyled className="form" onSubmit={handleOnSubmit} autoComplete="off">
       <label className="form__label" htmlFor="name">
         Teams name
         <input
@@ -186,6 +186,17 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           type="url"
           required={true}
         ></input>
+        {teamData.bgimage && (
+          <img
+            className="form__thumbnail"
+            alt="Team thumbnail"
+            src={teamData.bgimage}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = "/images/no-image.svg";
+            }}
+          />
+        )}
       </label>
 
       <Button

@@ -5,6 +5,10 @@ const LoginFormStyled = styled.form`
   place-items: center;
   gap: 30px;
   align-content: center;
+  animation: fade-in-top 0.8s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   .login-form {
     &__controller {
@@ -38,6 +42,17 @@ const LoginFormStyled = styled.form`
         color: ${(props) => props.theme.colors.primaryDark};
         transition: 0.5s;
       }
+    }
+  }
+
+  @keyframes fade-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 `;
