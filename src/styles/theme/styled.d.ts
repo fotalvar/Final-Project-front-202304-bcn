@@ -28,6 +28,14 @@ declare module "styled-components" {
     shadows: {
       button: string;
     };
+
+    animation: {
+      page: string;
+    };
+
+    keyframes: {
+      fadeInTop: string;
+    };
   }
 }
 

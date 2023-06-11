@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 const ListPageStyled = styled.main`
   margin-top: 120px;
+  animation: ${(props) => props.theme.animation.page};
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   .teamsList {
     &__title {
@@ -52,6 +56,17 @@ const ListPageStyled = styled.main`
       position: sticky;
       backdrop-filter: blur(8px);
       border-bottom: solid #fdfdfd1a 2px;
+    }
+  }
+
+  @keyframes fade-in-top {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
     }
   }
 `;

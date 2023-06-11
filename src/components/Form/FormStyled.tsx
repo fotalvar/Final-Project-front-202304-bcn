@@ -36,6 +36,15 @@ const FormStyled = styled.form`
       background-color: ${(props) => props.theme.colors.secondary};
       margin: 15px 0 35px 0;
     }
+
+    &__thumbnail {
+      margin-top: 10px;
+      width: 280px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: ${(props) => props.theme.shadows.button};
+    }
   }
 `;
 

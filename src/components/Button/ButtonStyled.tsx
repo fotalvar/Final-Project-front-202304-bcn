@@ -8,17 +8,7 @@ const ButtonStyled = styled.button`
   border-radius: 50px;
   border: none;
   box-shadow: ${(props) => props.theme.shadows.button};
-
-  &__login {
-    background: ${(props) => props.theme.colors.primary};
-    color: ${(props) => props.theme.colors.mainLight};
-    transition: 0.5s;
-  }
-  &__load-more {
-    background: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.mainLight};
-    transition: 0.5s;
-  }
+  background-color: ${(props) => props.theme.colors.secondary};
 `;
 
 export default ButtonStyled;

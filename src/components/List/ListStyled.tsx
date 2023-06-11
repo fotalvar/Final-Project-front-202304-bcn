@@ -5,6 +5,7 @@ const ListStyled = styled.ul`
   flex-direction: column;
   gap: 45px;
   padding: 20px;
+  align-items: center;
 `;
 
 export default ListStyled;
