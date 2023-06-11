@@ -77,3 +77,29 @@ export const teamListMock: TeamsState = {
     },
   ],
 };
+
+export const singleTeamMock: Partial<TeamsStructure> = {
+  name: "ELECTRO",
+  description:
+    "A team full of pyro characters. Perfect for elemental synergy and continuous pyro attack",
+  character1: "6471d17647109a6b3fc62dfd",
+  character2: "6471d17647109a6b3fc62e02",
+  character3: "6471d17647109a6b3fc62e07",
+  character4: "6471d17647109a6b3fc62e08",
+  rating: "S",
+  type: "Fighters",
+  bgimage:
+    "https://cdn.shopify.com/s/files/1/0554/2664/6129/articles/All-Pyro-Characters-Ranked-in-Genshin-Impact.webp",
+};
+
+export const singleTeamMockFailed: Partial<TeamsStructure> = {
+  name: "FAIL",
+  description: "",
+  character1: "",
+  character2: "",
+  character3: "",
+  character4: "",
+  rating: "",
+  type: "",
+  bgimage: "",
+};
