@@ -7,10 +7,10 @@ const ModalStyled = styled.div`
   position: fixed;
   background: #14192bbf;
   backdrop-filter: blur(10px);
-  border-radius: 20px;
+  border-radius: 0 0 20px 20px;
   width: 280px;
   min-height: 290px;
-  top: 20vh;
+  top: 0;
   z-index: 10;
   padding: 35px;
   color: white;
@@ -29,7 +29,7 @@ const ModalStyled = styled.div`
 
     &__message {
       text-align: center;
-      font-size: ${(props) => props.theme.fontSizes.medium};
+      font-size: ${(props) => props.theme.fontSizes.normal};
     }
     &__button {
       background-color: ${(props) => props.theme.colors.secondary};
@@ -43,6 +43,7 @@ const ModalStyled = styled.div`
   &.modal__error {
     outline: 3px solid #ac5b5b;
     border: 3px solid #e3b6b6cb;
+    border-top: 0;
   }
 
   .modal__icon__ok {
@@ -52,6 +53,7 @@ const ModalStyled = styled.div`
   &.modal__ok {
     outline: 3px solid #61935b;
     border: 3px solid #afeeb3c9;
+    border-top: 0;
   }
 
   @keyframes swing-in-top-fwd {
