@@ -61,8 +61,10 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           value={teamData.name}
           onChange={onChangeForm}
           required={true}
+          maxLength={20}
         ></input>
       </label>
+
       <label className="form__label" htmlFor="description">
         Description
         <textarea
@@ -71,6 +73,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           onChange={onChangeForm}
           id="description"
           required={true}
+          maxLength={300}
         ></textarea>
       </label>
 
@@ -180,7 +183,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           value={teamData.bgimage}
           onChange={onChangeForm}
           placeholder="https://..."
-          type="text"
+          type="url"
           required={true}
         ></input>
       </label>
