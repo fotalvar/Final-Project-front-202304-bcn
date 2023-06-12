@@ -22,15 +22,16 @@ const ListPage = (): React.ReactElement => {
 
       if (teams) {
         dispatch(loadTeamsActionCreator(teams));
+        for (let i = 0; i < 2; i++) {
+          const preconnectElement = await document.createElement("link");
+          preconnectElement.rel = "preload";
+          preconnectElement.as = "image";
+          preconnectElement.href = teams[i].image;
 
-        const preconnectElement = await document.createElement("link");
-        preconnectElement.rel = "preload";
-        preconnectElement.as = "image";
-        preconnectElement.href = teams[0].bgimage;
-
-        const parent = document.head;
-        const firstChild = document.head.firstChild;
-        parent.insertBefore(preconnectElement, firstChild);
+          const parent = document.head;
+          const firstChild = document.head.firstChild;
+          parent.insertBefore(preconnectElement, firstChild);
+        }
       }
     })();
   }, [dispatch, getTeams]);

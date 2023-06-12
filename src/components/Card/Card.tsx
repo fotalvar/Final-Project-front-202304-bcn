@@ -10,7 +10,7 @@ interface CardProps {
   lazyLoading: boolean;
 }
 const Card = ({
-  team: { bgimage, id, name, rating, type },
+  team: { image, id, name, rating, type },
   lazyLoading,
 }: CardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -36,7 +36,7 @@ const Card = ({
           </button>
           <button className="team-card__card">
             <img
-              src={bgimage}
+              src={image}
               alt={`${name} Team`}
               className="team-card__teamImage"
               width="280"

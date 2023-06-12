@@ -8,7 +8,7 @@ export interface TeamsStructure {
   character4: string;
   rating: string;
   type: string;
-  bgimage: string;
+  image: string;
 }
 
 export interface TeamsState {
