@@ -17,7 +17,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
     character4: "",
     rating: "",
     type: "",
-    bgimage: "",
+    image: "",
   };
 
   const [teamData, setTeamData] = useState(initialFormState);
@@ -48,7 +48,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
     !teamData.character4 ||
     !teamData.rating ||
     !teamData.type ||
-    !teamData.bgimage;
+    !teamData.image;
 
   return (
     <FormStyled className="form" onSubmit={handleOnSubmit} autoComplete="off">
@@ -62,7 +62,7 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
           onChange={onChangeForm}
           required={true}
           maxLength={20}
-        ></input>
+        />
       </label>
 
       <label className="form__label" htmlFor="description">
@@ -204,22 +204,22 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
         </select>
       </label>
 
-      <label className="form__label" htmlFor="bgimage">
+      <label className="form__label" htmlFor="image">
         Team Image
         <input
-          id="bgimage"
+          id="image"
           className="form__image form__input"
-          value={teamData.bgimage}
+          value={teamData.image}
           onChange={onChangeForm}
           placeholder="https://..."
           type="url"
           required={true}
-        ></input>
-        {teamData.bgimage && (
+        />
+        {teamData.image && (
           <img
             className="form__thumbnail"
             alt="Team thumbnail"
-            src={teamData.bgimage}
+            src={teamData.image}
             onError={({ currentTarget }) => {
               currentTarget.onerror = null;
               currentTarget.src = "/images/no-image.svg";

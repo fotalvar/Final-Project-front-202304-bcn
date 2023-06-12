@@ -41,7 +41,7 @@ describe("Given a Form component", () => {
         character4: "Barbara",
         rating: "A",
         type: "Explorer",
-        bgimage: "https://example.com/image.png",
+        image: "https://example.com/image.png",
       };
 
       renderWithProviders(<Form onSubmit={onSubmit} />);
@@ -54,7 +54,7 @@ describe("Given a Form component", () => {
       const character4 = screen.getByLabelText("Character 4");
       const rating = screen.getByLabelText("Team Rating");
       const type = screen.getByLabelText("Team Type");
-      const bgimage = screen.getByLabelText("Team Image");
+      const image = screen.getByLabelText("Team Image");
 
       await userEvent.type(name, teamData.name as string);
       await userEvent.type(description, teamData.description as string);
@@ -64,7 +64,7 @@ describe("Given a Form component", () => {
       await userEvent.selectOptions(character4, teamData.character4 as string);
       await userEvent.selectOptions(rating, teamData.rating as string);
       await userEvent.selectOptions(type, teamData.type as string);
-      await userEvent.type(bgimage, teamData.bgimage as string);
+      await userEvent.type(image, teamData.image as string);
 
       const button = screen.getByRole("button");
 
@@ -83,7 +83,7 @@ describe("Given a Form component", () => {
         character4: "Barbara",
         rating: "A",
         type: "Explorer",
-        bgimage: "https://example.com/image.png",
+        image: "https://example.com/image.png",
       };
 
       renderWithProviders(<Form onSubmit={onSubmit} />);
@@ -96,7 +96,7 @@ describe("Given a Form component", () => {
       const character4 = screen.getByLabelText("Character 4");
       const rating = screen.getByLabelText("Team Rating");
       const type = screen.getByLabelText("Team Type");
-      const bgimage = screen.getByLabelText("Team Image");
+      const image = screen.getByLabelText("Team Image");
 
       await userEvent.type(name, teamData.name as string);
       await userEvent.type(description, teamData.description as string);
@@ -106,7 +106,7 @@ describe("Given a Form component", () => {
       await userEvent.selectOptions(character4, teamData.character4 as string);
       await userEvent.selectOptions(rating, teamData.rating as string);
       await userEvent.selectOptions(type, teamData.type as string);
-      await userEvent.type(bgimage, teamData.bgimage as string);
+      await userEvent.type(image, teamData.image as string);
 
       const button = screen.getByRole("button");
 
@@ -120,17 +120,17 @@ describe("Given a Form component", () => {
     test('renders with default image when "onError" event is triggered', async () => {
       renderWithProviders(<Form onSubmit={onSubmit} />);
 
-      const bgimage = screen.getByLabelText("Team Image");
-      await userEvent.type(bgimage, "http://test");
+      const image = screen.getByLabelText("Team Image");
+      await userEvent.type(image, "http://test");
 
-      const image = screen.getByAltText("Team thumbnail");
+      const imageText = screen.getByAltText("Team thumbnail");
 
-      expect(image).toBeInTheDocument();
-      expect(image).toHaveAttribute("src", "http://test");
+      expect(imageText).toBeInTheDocument();
+      expect(imageText).toHaveAttribute("src", "http://test");
 
-      fireEvent.error(image);
+      fireEvent.error(imageText);
 
-      expect(image).toHaveAttribute("src", "/images/no-image.svg");
+      expect(imageText).toHaveAttribute("src", "/images/no-image.svg");
     });
   });
 });
