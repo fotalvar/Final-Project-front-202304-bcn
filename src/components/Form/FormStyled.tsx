@@ -40,7 +40,7 @@ const FormStyled = styled.form`
     &__thumbnail {
       margin-top: 10px;
       width: 280px;
-      height: 220px;
+      height: 170px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: ${(props) => props.theme.shadows.button};
