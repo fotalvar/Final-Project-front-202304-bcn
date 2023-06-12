@@ -25,6 +25,7 @@ export const teamsSlice = createSlice({
       ...currentTeams,
       teams: [...currentTeams.teams, action.payload],
     }),
+
     loadMore: (currentTeams): TeamsState => ({
       ...currentTeams,
       limit: currentTeams.limit + 3,

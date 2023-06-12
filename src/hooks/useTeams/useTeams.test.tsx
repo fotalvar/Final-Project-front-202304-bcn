@@ -66,65 +66,22 @@ describe("Given a deleteTeam function", () => {
     });
   });
 
-  describe("Given a deleteTeam function", () => {
-    describe("When it is called with a incorrect user id", () => {
-      test("Then it should return a message 'Can`t delete Team'", async () => {
-        server.resetHandlers(...errorHandlers);
-
-        const id = "33";
-        const message = "Can't delete Team";
-
-        const {
-          result: {
-            current: { deleteTeam },
-          },
-        } = renderHook(() => useTeams(), { wrapper: wrapper });
-
-        await deleteTeam(id);
-
-        const expectedMessage = store.getState().uiStore.errorMessage;
-
-        expect(message).toBe(expectedMessage);
-      });
-    });
-  });
-});
-
-describe("Given an addTeams function", () => {
-  describe("When it is called with a valid team", () => {
-    test("Then it should return the new team", async () => {
-      server.resetHandlers(...handlers);
-
-      const expectedNewTeam = singleTeamMock;
-
-      const {
-        result: {
-          current: { addTeam },
-        },
-      } = renderHook(() => useTeams(), { wrapper: wrapper });
-
-      const newTeam = await addTeam(singleTeamMock);
-
-      expect(newTeam).toStrictEqual(expectedNewTeam);
-    });
-  });
-
-  describe("When it is called with an invalid team", () => {
-    test("Then it should return an error", async () => {
+  describe("When it calls with a incorrect user id", () => {
+    test("Then it should return a message 'Can't delete'", async () => {
       server.resetHandlers(...errorHandlers);
 
-      const team = singleTeamMockFailed;
-      const message = "Can't add Team";
+      const id = "invalidaid";
+      const message = "Can't delete Team";
       let errorOccurred = false;
 
       const {
         result: {
-          current: { addTeam },
+          current: { deleteTeam },
         },
       } = renderHook(() => useTeams(), { wrapper: wrapper });
 
       try {
-        await addTeam(team);
+        await deleteTeam(id);
       } catch (error) {
         errorOccurred = true;
       }
@@ -133,6 +90,53 @@ describe("Given an addTeams function", () => {
 
       expect(message).toBe(expectedMessage);
       expect(errorOccurred).toBe(true);
+    });
+  });
+
+  describe("Given an addTeams function", () => {
+    describe("When it is called with a valid team", () => {
+      test("Then it should return the new team", async () => {
+        server.resetHandlers(...handlers);
+
+        const expectedNewTeam = singleTeamMock;
+
+        const {
+          result: {
+            current: { addTeam },
+          },
+        } = renderHook(() => useTeams(), { wrapper: wrapper });
+
+        const newTeam = await addTeam(singleTeamMock);
+
+        expect(newTeam).toStrictEqual(expectedNewTeam);
+      });
+    });
+
+    describe("When it is called with an invalid team", () => {
+      test("Then it should return an error", async () => {
+        server.resetHandlers(...errorHandlers);
+
+        const team = singleTeamMockFailed;
+        const message = "Can't add Team";
+        let errorOccurred = false;
+
+        const {
+          result: {
+            current: { addTeam },
+          },
+        } = renderHook(() => useTeams(), { wrapper: wrapper });
+
+        try {
+          await addTeam(team);
+        } catch (error) {
+          errorOccurred = true;
+        }
+
+        const expectedMessage = store.getState().uiStore.errorMessage;
+
+        expect(message).toBe(expectedMessage);
+        expect(errorOccurred).toBe(true);
+      });
     });
   });
 });

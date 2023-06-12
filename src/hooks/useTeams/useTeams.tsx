@@ -40,19 +40,10 @@ const useTeams = () => {
 
   const deleteTeam = async (teamId: string) => {
     dispatch(showLoaderActionCreator());
-
     try {
-      const { status } = await axios.delete(
-        `${apiUrl}${paths.teams}${paths.delete}/${teamId}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-
-      if (!status) {
-        const error = new Error("Can't delete Team");
-        throw error;
-      }
+      await axios.delete(`${apiUrl}${paths.teams}${paths.delete}/${teamId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       dispatch(hideLoaderActionCreator());
       dispatch(
@@ -61,9 +52,9 @@ const useTeams = () => {
           isError: false,
         })
       );
-
-      return status;
+      return;
     } catch (error) {
+      (error as Error).message = "Can't delete Team";
       dispatch(hideLoaderActionCreator());
       dispatch(
         showErrorActionCreator({
@@ -71,6 +62,7 @@ const useTeams = () => {
           isError: true,
         })
       );
+      throw error;
     }
   };
 
