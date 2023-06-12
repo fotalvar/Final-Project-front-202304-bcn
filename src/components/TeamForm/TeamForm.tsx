@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { TeamsStructure } from "../../store/teams/types";
 import Button from "../Button/Button";
-import FormStyled from "./FormStyled";
+import FormStyled from "./TeamFormStyled";
 
 export interface FormProps {
   onSubmit: (teamData: Partial<TeamsStructure>) => void;
 }
 
-const Form = ({ onSubmit }: FormProps): React.ReactElement => {
+const TeamForm = ({ onSubmit }: FormProps): React.ReactElement => {
   const initialFormState: Partial<TeamsStructure> = {
     name: "",
     description: "",
@@ -238,4 +238,4 @@ const Form = ({ onSubmit }: FormProps): React.ReactElement => {
   );
 };
 
-export default Form;
+export default TeamForm;

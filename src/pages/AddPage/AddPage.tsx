@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Form from "../../components/Form/Form";
+import TeamForm from "../../components/TeamForm/TeamForm";
 import useTeams from "../../hooks/useTeams/useTeams";
 import { addTeamActionCreator } from "../../store/teams/teamsSlice";
 import { TeamsStructure } from "../../store/teams/types";
@@ -29,7 +29,7 @@ const AddPage = (): React.ReactElement => {
   return (
     <AddPageStyled>
       <h1 className="add-team__title">Create Team</h1>
-      <Form onSubmit={onSubmit} />
+      <TeamForm onSubmit={onSubmit} />
     </AddPageStyled>
   );
 };

@@ -1,7 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import { fireEvent, screen } from "@testing-library/react";
 import renderWithProviders from "../../utils/testUtils";
-import Form from "./Form";
+import TeamForm from "./TeamForm";
 import { TeamsStructure } from "../../store/teams/types";
 
 const onSubmit = () => ({});
@@ -21,7 +21,7 @@ describe("Given a Form component", () => {
         "Team Image",
       ];
 
-      renderWithProviders(<Form onSubmit={onSubmit} />);
+      renderWithProviders(<TeamForm onSubmit={onSubmit} />);
 
       labels.forEach((labels) => {
         const label = screen.getByLabelText(labels);
@@ -44,7 +44,7 @@ describe("Given a Form component", () => {
         image: "https://example.com/image.png",
       };
 
-      renderWithProviders(<Form onSubmit={onSubmit} />);
+      renderWithProviders(<TeamForm onSubmit={onSubmit} />);
 
       const name = screen.getByLabelText("Teams name");
       const description = screen.getByLabelText("Description");
@@ -86,7 +86,7 @@ describe("Given a Form component", () => {
         image: "https://example.com/image.png",
       };
 
-      renderWithProviders(<Form onSubmit={onSubmit} />);
+      renderWithProviders(<TeamForm onSubmit={onSubmit} />);
 
       const name = screen.getByLabelText("Teams name");
       const description = screen.getByLabelText("Description");
@@ -118,7 +118,7 @@ describe("Given a Form component", () => {
 
   describe("When the user writes an image url", () => {
     test('renders with default image when "onError" event is triggered', async () => {
-      renderWithProviders(<Form onSubmit={onSubmit} />);
+      renderWithProviders(<TeamForm onSubmit={onSubmit} />);
 
       const image = screen.getByLabelText("Team Image");
       await userEvent.type(image, "http://test");
