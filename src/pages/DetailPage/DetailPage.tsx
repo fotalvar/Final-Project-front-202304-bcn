@@ -1,54 +1,6 @@
 import React from "react";
 import DetailPageStyled from "./DetailPageStyled";
 
-// interface DetailProps {
-//   team: TeamsStructure;
-// }
-
-// const DetailPage = ({
-//   team: {
-//     image,
-//     name,
-//     rating,
-//     type,
-//     character1,
-//     character2,
-//     character3,
-//     character4,
-//     description,
-//   },
-// }: DetailProps): React.ReactElement => {
-//   return (
-//     <DetailPageStyled>
-//       <h1 className="detail__title">{name}</h1>
-//       <img src={image} alt={name} />
-//       <p>{description}</p>
-//       <span>{type}</span>
-//       <span>{rating}</span>
-//       <ul>
-//         <li>
-//           <img src={`/images/characters/${character1}.webp`} alt={character1} />
-//           <h2>{character1}</h2>
-//         </li>
-//         <li>
-//           <img src={`/images/characters/${character2}.webp`} alt={character2} />
-//           <h2>{character2}</h2>
-//         </li>
-//         <li>
-//           <img src={`/images/characters/${character3}.webp`} alt={character3} />
-//           <h2>{character3}</h2>
-//         </li>
-//         <li>
-//           <img src={`/images/characters/${character4}.webp`} alt={character4} />
-//           <h2>{character4}</h2>
-//         </li>
-//       </ul>
-//     </DetailPageStyled>
-//   );
-// };
-
-// export default DetailPage;
-
 const DetailPage = (): React.ReactElement => {
   return (
     <DetailPageStyled>
