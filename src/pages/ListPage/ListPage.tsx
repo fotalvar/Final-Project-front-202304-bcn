@@ -40,10 +40,10 @@ const ListPage = (): React.ReactElement => {
   const team = useAppSelector((state) => state.teamsStore);
 
   return (
-    <ListPageStyled className="teamsList">
-      <h1 className="teamsList__title">{name}`s Teams</h1>
-      <section className="teamsList__filter">
-        <select className="teamsList__rankList" disabled>
+    <ListPageStyled className="teams-list">
+      <h1 className="teams-list__title">{name}`s Teams</h1>
+      <section className="teams-list__filter">
+        <select className="teams-list__rankList" disabled>
           <option defaultValue="ranks">All rank levels</option>
           <option value="a">A</option>
           <option value="b">B</option>
@@ -52,7 +52,7 @@ const ListPage = (): React.ReactElement => {
           <option value="s">S</option>
           <option value="ss">SS</option>
         </select>
-        <button className="teamsList__addButton" onClick={addTeamOnClick}>
+        <button className="teams-list__addButton" onClick={addTeamOnClick}>
           {" "}
           <img
             src="../images/icons/add.svg"

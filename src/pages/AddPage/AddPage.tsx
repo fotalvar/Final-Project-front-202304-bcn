@@ -6,7 +6,6 @@ import { TeamsStructure } from "../../store/teams/types";
 import AddPageStyled from "./AddPageStyled";
 import paths from "../../routers/paths/paths";
 import { useAppDispatch } from "../../store";
-import { showErrorActionCreator } from "../../store/ui/uiSlice";
 
 const AddPage = (): React.ReactElement => {
   const { addTeam } = useTeams();
@@ -19,16 +18,11 @@ const AddPage = (): React.ReactElement => {
     dispatch(addTeamActionCreator(newTeam));
 
     navigate(paths.home);
-    dispatch(
-      showErrorActionCreator({
-        errorMessage: "Team Created",
-        isError: false,
-      })
-    );
   };
+
   return (
     <AddPageStyled>
-      <h1 className="add-team__title">Create Team</h1>
+      <h1 className="add-team-title">Create Team</h1>
       <TeamForm onSubmit={onSubmit} />
     </AddPageStyled>
   );

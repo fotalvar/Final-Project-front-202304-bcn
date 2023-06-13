@@ -3,11 +3,16 @@ import styled from "styled-components";
 const ListPageStyled = styled.main`
   margin-top: 120px;
   animation: ${(props) => props.theme.animation.page};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }
 
-  .teamsList {
+  .teams-list {
     &__title {
       text-align: center;
       color: ${(props) => props.theme.colors.secondary};
