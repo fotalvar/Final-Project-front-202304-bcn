@@ -17,7 +17,7 @@ export const handlers = [
   }),
 
   rest.post(`${apiUrl}/teams/add`, (_req, res, ctx) => {
-    return res(ctx.status(201), ctx.json({ ...singleTeamMock }));
+    return res(ctx.status(201), ctx.json({ newTeam: singleTeamMock }));
   }),
 ];
 

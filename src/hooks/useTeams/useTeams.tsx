@@ -71,7 +71,7 @@ const useTeams = () => {
   ): Promise<TeamsStructure> => {
     try {
       dispatch(showLoaderActionCreator());
-      const { data: newTeam } = await axios.post<TeamsStructure>(
+      const { data: newTeam } = await axios.post<{ newTeam: TeamsStructure }>(
         `${apiUrl}${paths.teams}${paths.add}`,
         teamData,
         {
@@ -88,7 +88,8 @@ const useTeams = () => {
         })
       );
 
-      return newTeam;
+      window.scrollTo(0, 0);
+      return newTeam.newTeam;
     } catch (error: unknown) {
       dispatch(hideLoaderActionCreator());
       dispatch(

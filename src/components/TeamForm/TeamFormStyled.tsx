@@ -44,6 +44,7 @@ const FormStyled = styled.form`
       object-fit: cover;
       border-radius: 10px;
       box-shadow: ${(props) => props.theme.shadows.button};
+      animation: ${(props) => props.theme.animation.page};
     }
   }
 `;
