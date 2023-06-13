@@ -1,5 +1,5 @@
 import { rest } from "msw";
-import { apiUrl } from "../hooks/user/useUser";
+import { apiUrl } from "../hooks/useUser/useUser";
 import { userToken } from "./userMocks/userMocks";
 import { singleTeamMock, teamMock } from "./teamsMocks/teamsMocks";
 

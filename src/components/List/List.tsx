@@ -32,7 +32,7 @@ const List = ({ teamProps }: ListProps): React.ReactElement => {
           );
         })}
       </ListStyled>
-      <LoadMore onClick={handleLoadMore} />;
+      <LoadMore onClick={handleLoadMore} />
     </>
   );
 };

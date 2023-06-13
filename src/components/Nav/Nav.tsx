@@ -1,7 +1,7 @@
 import React from "react";
 import NavStyled from "./NavStyled";
 import { NavLink, useNavigate } from "react-router-dom";
-import useLocalStorage from "../../hooks/localStorage/useLocalStorage";
+import useLocalStorage from "../../hooks/useLocalStorage/useLocalStorage";
 import paths from "../../routers/paths/paths";
 import { useAppDispatch } from "../../store";
 import { logoutUserActionCreator } from "../../store/user/userSlice";

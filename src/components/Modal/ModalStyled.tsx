@@ -5,8 +5,6 @@ const ModalStyled = styled.div`
   flex-direction: column;
   align-items: center;
   position: fixed;
-  background: #14192bbf;
-  backdrop-filter: blur(10px);
   border-radius: 0 0 20px 20px;
   width: 280px;
   min-height: 290px;
@@ -15,7 +13,9 @@ const ModalStyled = styled.div`
   padding: 35px;
   color: white;
   gap: 30px;
-  box-shadow: 0px 26px 20px 5px #00000095;
+  background: linear-gradient(180deg, #00000085 0%, rgba(0, 0, 0, 0) 18.74%),
+    rgba(20, 25, 43, 0.75);
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.3);
   animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -41,9 +41,9 @@ const ModalStyled = styled.div`
   }
 
   &.modal__error {
-    outline: 3px solid #ac5b5b;
-    border: 3px solid #e3b6b6cb;
-    border-top: 0;
+    backdrop-filter: blur(10px);
+    border-radius: 0px 0px 20px 20px;
+    border-bottom: rgb(172, 91, 91) solid 3px;
   }
 
   .modal__icon__ok {
@@ -51,9 +51,9 @@ const ModalStyled = styled.div`
   }
 
   &.modal__ok {
-    outline: 3px solid #61935b;
-    border: 3px solid #afeeb3c9;
-    border-top: 0;
+    backdrop-filter: blur(10px);
+    border-radius: 0px 0px 20px 20px;
+    border-bottom: #61935b solid 3px;
   }
 
   @keyframes swing-in-top-fwd {
