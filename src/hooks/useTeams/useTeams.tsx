@@ -80,6 +80,14 @@ const useTeams = () => {
       );
 
       dispatch(hideLoaderActionCreator());
+
+      dispatch(
+        showErrorActionCreator({
+          errorMessage: "Team Created",
+          isError: false,
+        })
+      );
+
       return newTeam;
     } catch (error: unknown) {
       dispatch(hideLoaderActionCreator());
@@ -89,7 +97,7 @@ const useTeams = () => {
           isError: true,
         })
       );
-      throw "Can't add Team";
+      throw error;
     }
   };
 

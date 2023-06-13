@@ -8,11 +8,9 @@ const AddPageStyled = styled.main`
     animation: none;
   }
 
-  .add-team {
-    &__title {
-      text-align: center;
-      color: ${(props) => props.theme.colors.secondary};
-    }
+  .add-team-title {
+    text-align: center;
+    color: ${(props) => props.theme.colors.secondary};
   }
 
   @keyframes fade-in-top {
