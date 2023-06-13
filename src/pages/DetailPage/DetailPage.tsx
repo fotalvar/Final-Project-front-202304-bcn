@@ -8,7 +8,7 @@ const DetailPage = (): React.ReactElement => {
       <img
         className="detail__image"
         src="https://i.ibb.co/Wp1zR9S/Sumeru.webp"
-        alt="Sumeru Team"
+        alt="Background team"
       />
       <p className="detail__description">
         A team full of pyro characters. Perfect for elemental synergy and
