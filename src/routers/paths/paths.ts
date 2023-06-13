@@ -6,6 +6,7 @@ const paths = {
   teams: "/teams",
   delete: "/delete",
   add: "/add",
+  detail: "/detail",
 };
 
 export default paths;

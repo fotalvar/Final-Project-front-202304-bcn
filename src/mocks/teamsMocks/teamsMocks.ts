@@ -118,3 +118,18 @@ export const singleTeamMockFailed: Partial<TeamsStructure> = {
   type: "",
   image: "",
 };
+
+export const detailMock: TeamsStructure = {
+  id: "test",
+  name: "Liyue Essentials",
+  description:
+    "Liyue is one of the seven nations in Genshin Impact, and it is home to a diverse cast of characters.",
+  character1: "Cyno",
+  character2: "Klee",
+  character3: "Diluc",
+  character4: "Razor",
+  rating: "SS+",
+  type: "Tank",
+  image:
+    "https://image-cdn.essentiallysports.com/wp-content/uploads/20210324200849/WCCFgenshinimpact9.jpg?width=600",
+};
