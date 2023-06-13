@@ -9,3 +9,7 @@ export const LazyErrorPage = lazy(
 );
 
 export const LazyAddPage = lazy(() => import("../pages/AddPage/AddPage"));
+
+export const LazyDetailPage = lazy(
+  () => import("../pages/DetailPage/DetailPage")
+);
