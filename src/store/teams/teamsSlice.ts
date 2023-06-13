@@ -1,7 +1,13 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { TeamsState, TeamsStructure } from "./types";
+import { emptyTeam } from "../../mocks/teamsMocks/teamsMocks";
 
-const InitialTeamsState: TeamsState = { teams: [], limit: 3 };
+const InitialTeamsState: TeamsState = {
+  teams: [],
+  limit: 3,
+  totalCount: 0,
+  singleTeam: emptyTeam,
+};
 
 export const teamsSlice = createSlice({
   name: "teams",
@@ -30,6 +36,22 @@ export const teamsSlice = createSlice({
       ...currentTeams,
       limit: currentTeams.limit + 3,
     }),
+
+    getTotalCount: (
+      currentTeams: TeamsState,
+      action: PayloadAction<number>
+    ) => ({
+      ...currentTeams,
+      totalCount: action.payload,
+    }),
+
+    loadSingleTeam: (
+      currentTeams: TeamsState,
+      action: PayloadAction<TeamsStructure>
+    ) => ({
+      ...currentTeams,
+      singleTeam: action.payload,
+    }),
   },
 });
 
@@ -38,6 +60,8 @@ export const {
   deleteTeam: deleteTeamActionCreator,
   addTeam: addTeamActionCreator,
   loadMore: loadMoreActionCreator,
+  getTotalCount: getTotalCountActionCreator,
+  loadSingleTeam: loadSingleTeamActionCreator,
 } = teamsSlice.actions;
 
 export const teamsReducer = teamsSlice.reducer;

@@ -3,7 +3,7 @@ import renderWithProviders from "../../utils/testUtils";
 import LoadMore from "./LoadMore";
 import userEvent from "@testing-library/user-event";
 import ListPage from "../../pages/ListPage/ListPage";
-import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
+import { detailMock, teamMock } from "../../mocks/teamsMocks/teamsMocks";
 import { vitest } from "vitest";
 
 describe("Given a LoadMore component", () => {
@@ -26,7 +26,12 @@ describe("Given a LoadMore component", () => {
       const buttonText = "load more";
 
       renderWithProviders(<ListPage />, {
-        teamsStore: { teams: teamMock, limit: 3 },
+        teamsStore: {
+          teams: teamMock,
+          limit: 3,
+          singleTeam: detailMock,
+          totalCount: 0,
+        },
       });
 
       const loadMoreButton = screen.getByRole("button", {

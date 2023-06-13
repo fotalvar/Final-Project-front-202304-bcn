@@ -1,6 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import { screen } from "@testing-library/react";
-import { teamMock } from "../../mocks/teamsMocks/teamsMocks";
+import { detailMock, teamMock } from "../../mocks/teamsMocks/teamsMocks";
 import renderWithProviders from "../../utils/testUtils";
 import Card from "./Card";
 import ListPage from "../../pages/ListPage/ListPage";
@@ -26,7 +26,12 @@ describe("Given a Card component", () => {
       const buttonName = "remove icon";
 
       renderWithProviders(<ListPage />, {
-        teamsStore: { teams: teamMock, limit: 0 },
+        teamsStore: {
+          teams: teamMock,
+          limit: 0,
+          singleTeam: detailMock,
+          totalCount: 0,
+        },
       });
 
       const button = screen.getAllByRole("button", { name: buttonName });

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useCallback } from "react";
 import { useAppSelector } from "../../store";
-import { apiUrl } from "../user/useUser";
+import { apiUrl } from "../useUser/useUser";
 import { useDispatch } from "react-redux";
 import {
   hideLoaderActionCreator,
@@ -10,6 +10,7 @@ import {
 } from "../../store/ui/uiSlice";
 import paths from "../../routers/paths/paths";
 import { TeamsStructure } from "../../store/teams/types";
+import { getTotalCountActionCreator } from "../../store/teams/teamsSlice";
 
 const useTeams = () => {
   const { token } = useAppSelector((state) => state.userStore);
@@ -20,11 +21,15 @@ const useTeams = () => {
     try {
       dispatch(showLoaderActionCreator());
       const {
-        data: { teams },
-      } = await axios.get(`${apiUrl}/teams?limit=${limit}`, {
+        data: { teams, totalCount },
+      } = await axios.get<{
+        teams: TeamsStructure[];
+        totalCount: number;
+      }>(`${apiUrl}/teams?limit=${limit}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       dispatch(hideLoaderActionCreator());
+      dispatch(getTotalCountActionCreator(totalCount));
 
       return teams;
     } catch {

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import LoginForm from "../../components/LoginForm/LoginForm";
-import useToken from "../../hooks/token/useToken";
-import useUser from "../../hooks/user/useUser";
+import useToken from "../../hooks/useToken/useToken";
+import useUser from "../../hooks/useUser/useUser";
 import { useAppDispatch } from "../../store";
 import { UserCredentials } from "../../types";
 import { loginUserActionCreator } from "../../store/user/userSlice";
