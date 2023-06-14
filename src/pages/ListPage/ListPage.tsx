@@ -52,12 +52,11 @@ const ListPage = (): React.ReactElement => {
     })();
   }, [dispatch, getTeams]);
 
-  const { name } = useAppSelector((state) => state.userStore);
   const team = useAppSelector((state) => state.teamsStore);
 
   return (
     <ListPageStyled className="teams-list">
-      <h1 className="teams-list__title">{name}`s Teams</h1>
+      <h1 className="teams-list__title">All Teams</h1>
       <section className="teams-list__filter">
         <select className="teams-list__rankList">
           <option defaultValue="ranks">All rank levels</option>
