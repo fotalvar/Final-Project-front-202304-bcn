@@ -4,6 +4,7 @@ import { TeamsStructure } from "../../store/teams/types";
 import useTeams from "../../hooks/useTeams/useTeams";
 import { useAppDispatch } from "../../store";
 import { deleteTeamActionCreator } from "../../store/teams/teamsSlice";
+import { useNavigate } from "react-router-dom";
 
 interface CardProps {
   team: TeamsStructure;
@@ -14,6 +15,10 @@ const Card = ({
   lazyLoading,
 }: CardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const handleDetails = () => {
+    navigate(`/detail/${id}`);
+  };
 
   const { deleteTeam } = useTeams();
 
@@ -34,7 +39,7 @@ const Card = ({
               height="13"
             />
           </button>
-          <button className="team-card__card">
+          <button className="team-card__card" onClick={handleDetails}>
             <img
               src={image}
               alt={`${name} Team`}
