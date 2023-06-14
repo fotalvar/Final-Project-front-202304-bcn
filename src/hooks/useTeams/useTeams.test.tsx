@@ -23,7 +23,7 @@ describe("Given a getTeams function", () => {
 
       const teamsList = await getTeams();
 
-      expect(expectedTeams).toStrictEqual(teamsList);
+      expect(expectedTeams).toStrictEqual(teamsList?.teams);
     });
   });
 

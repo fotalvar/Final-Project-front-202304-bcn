@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useAppSelector } from "../../store";
 import { apiUrl } from "../useUser/useUser";
 import { useDispatch } from "react-redux";
@@ -17,6 +17,15 @@ const useTeams = () => {
   const { limit } = useAppSelector((state) => state.teamsStore);
   const dispatch = useDispatch();
 
+  const config = useMemo(
+    () => ({
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }),
+    [token]
+  );
+
   const getTeams = useCallback(async () => {
     try {
       dispatch(showLoaderActionCreator());
@@ -31,7 +40,7 @@ const useTeams = () => {
       dispatch(hideLoaderActionCreator());
       dispatch(getTotalCountActionCreator(totalCount));
 
-      return teams;
+      return { teams, totalCount };
     } catch {
       dispatch(hideLoaderActionCreator());
       dispatch(
@@ -107,6 +116,32 @@ const useTeams = () => {
     }
   };
 
-  return { getTeams, deleteTeam, addTeam };
+  const getTeam = useCallback(
+    async (teamId: string): Promise<TeamsStructure | undefined> => {
+      dispatch(showLoaderActionCreator());
+
+      try {
+        const { data } = await axios.get<{ teamById: TeamsStructure }>(
+          `${apiUrl}${paths.teams}${paths.detail}/${teamId}`,
+          config
+        );
+        dispatch(hideLoaderActionCreator());
+
+        return data.teamById;
+      } catch (error) {
+        dispatch(hideLoaderActionCreator());
+
+        dispatch(
+          showErrorActionCreator({
+            errorMessage: "Can´t show this Team",
+            isError: true,
+          })
+        );
+      }
+    },
+    [dispatch, config]
+  );
+
+  return { getTeams, deleteTeam, addTeam, getTeam };
 };
 export default useTeams;

@@ -89,13 +89,11 @@ const TeamForm = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Venti">Venti</option>
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
-          <option value="Barbara">Barbara</option>
-          <option value="Jean">Jean</option>
-          <option value="Keqing">Keqing</option>
-          <option value="Klee">Klee</option>
-          <option value="Mona">Mona</option>
-          <option value="Qiqi">Qiqi</option>
-          <option value="Razor">Razor</option>
+          <option value="Thiggnari">Thiggnari</option>
+          <option value="Ningguang">Ningguang</option>
+          <option value="Kokomi">Kokomi</option>
+          <option value="Barbara">Barabara</option>
+          <option value="Mika">Mika</option>
         </select>
       </label>
 
@@ -111,13 +109,11 @@ const TeamForm = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Venti">Venti</option>
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
-          <option value="Barbara">Barbara</option>
-          <option value="Jean">Jean</option>
-          <option value="Keqing">Keqing</option>
-          <option value="Klee">Klee</option>
-          <option value="Mona">Mona</option>
-          <option value="Qiqi">Qiqi</option>
-          <option value="Razor">Razor</option>
+          <option value="Thiggnari">Thiggnari</option>
+          <option value="Ningguang">Ningguang</option>
+          <option value="Kokomi">Kokomi</option>
+          <option value="Barbara">Barabara</option>
+          <option value="Mika">Mika</option>
         </select>
       </label>
 
@@ -133,13 +129,11 @@ const TeamForm = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Venti">Venti</option>
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
-          <option value="Barbara">Barbara</option>
-          <option value="Jean">Jean</option>
-          <option value="Keqing">Keqing</option>
-          <option value="Klee">Klee</option>
-          <option value="Mona">Mona</option>
-          <option value="Qiqi">Qiqi</option>
-          <option value="Razor">Razor</option>
+          <option value="Thiggnari">Thiggnari</option>
+          <option value="Ningguang">Ningguang</option>
+          <option value="Kokomi">Kokomi</option>
+          <option value="Barbara">Barabara</option>
+          <option value="Mika">Mika</option>
         </select>
       </label>
 
@@ -155,13 +149,11 @@ const TeamForm = ({ onSubmit }: FormProps): React.ReactElement => {
           <option value="Venti">Venti</option>
           <option value="Cyno">Cyno</option>
           <option value="Diluc">Diluc</option>
-          <option value="Barbara">Barbara</option>
-          <option value="Jean">Jean</option>
-          <option value="Keqing">Keqing</option>
-          <option value="Klee">Klee</option>
-          <option value="Mona">Mona</option>
-          <option value="Qiqi">Qiqi</option>
-          <option value="Razor">Razor</option>
+          <option value="Thiggnari">Thiggnari</option>
+          <option value="Ningguang">Ningguang</option>
+          <option value="Kokomi">Kokomi</option>
+          <option value="Barbara">Barabara</option>
+          <option value="Mika">Mika</option>
         </select>
       </label>
 
