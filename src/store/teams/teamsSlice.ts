@@ -48,9 +48,9 @@ export const teamsSlice = createSlice({
     loadSingleTeam: (
       currentTeams: TeamsState,
       action: PayloadAction<TeamsStructure>
-    ) => ({
+    ): TeamsState => ({
       ...currentTeams,
-      singleTeam: action.payload,
+      singleTeam: { ...action.payload },
     }),
   },
 });

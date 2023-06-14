@@ -1,27 +1,43 @@
 import ListPageStyled from "./ListPageStyled";
 import { useAppDispatch, useAppSelector } from "../../store";
 import List from "../../components/List/List";
-import { useEffect } from "react";
-import { loadTeamsActionCreator } from "../../store/teams/teamsSlice";
+import { useEffect, useState } from "react";
+import {
+  loadMoreActionCreator,
+  loadTeamsActionCreator,
+} from "../../store/teams/teamsSlice";
 import useTeams from "../../hooks/useTeams/useTeams";
 import { useNavigate } from "react-router-dom";
 import paths from "../../routers/paths/paths";
+import LoadMore from "../../components/LoadMore/LoadMore";
 
 const ListPage = (): React.ReactElement => {
-  const { getTeams } = useTeams();
   const dispatch = useAppDispatch();
+  const { getTeams } = useTeams();
+  const { teams } = useAppSelector((state) => state.teamsStore);
+  const [totalCount, settotalCount] = useState(0);
+
   const navigate = useNavigate();
 
   const addTeamOnClick = (): void => {
     navigate(paths.add);
   };
 
+  const handleLoadMore = () => {
+    dispatch(loadMoreActionCreator());
+  };
+
   useEffect(() => {
     (async () => {
-      const teams = await getTeams();
+      const response = await getTeams();
 
-      if (teams) {
+      if (response) {
+        const { totalCount, teams } = response;
+
+        settotalCount(totalCount);
+
         dispatch(loadTeamsActionCreator(teams));
+
         for (let i = 0; i < 2; i++) {
           const preconnectElement = await document.createElement("link");
           preconnectElement.rel = "preload";
@@ -63,6 +79,8 @@ const ListPage = (): React.ReactElement => {
         </button>
       </section>
       <List teamProps={team.teams} />
+
+      {teams.length !== totalCount && <LoadMore onClick={handleLoadMore} />}
     </ListPageStyled>
   );
 };

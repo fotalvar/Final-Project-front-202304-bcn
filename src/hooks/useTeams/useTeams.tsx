@@ -40,7 +40,7 @@ const useTeams = () => {
       dispatch(hideLoaderActionCreator());
       dispatch(getTotalCountActionCreator(totalCount));
 
-      return teams;
+      return { teams, totalCount };
     } catch {
       dispatch(hideLoaderActionCreator());
       dispatch(

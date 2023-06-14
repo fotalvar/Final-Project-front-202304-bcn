@@ -49,7 +49,7 @@ const routes: RouteObject[] = [
         ),
       },
       {
-        path: paths.detail,
+        path: `${paths.detail}/:teamId`,
         element: (
           <Suspense>
             <LazyDetailPage />
