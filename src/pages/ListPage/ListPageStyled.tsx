@@ -7,6 +7,7 @@ const ListPageStyled = styled.main`
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  margin-bottom: 20px;
 
   @media (prefers-reduced-motion: reduce) {
     animation: none;

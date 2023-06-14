@@ -29,7 +29,7 @@ describe("Given a LoginPage page", () => {
 
   describe("When the user submit the form with a valid credentials", () => {
     test("Then it should redirect the user to the home page", async () => {
-      const expectedText = "fede`s Teams";
+      const expectedText = "All Teams";
 
       const mockUser: UserCredentials = {
         username: "fede",
