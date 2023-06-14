@@ -26,7 +26,6 @@ const DetailPageStyled = styled.main`
 
     &__description {
       color: ${(props) => props.theme.colors.mainLight};
-      text-align: justify;
     }
 
     &__skills {

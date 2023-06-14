@@ -9,6 +9,11 @@ import { server } from "../../mocks/server";
 import { errorHandlers, handlers } from "../../mocks/handlers";
 import useTeams from "./useTeams";
 import { store } from "../../store";
+import { vi } from "vitest";
+
+beforeEach(() => {
+  vi.clearAllMocks();
+});
 
 describe("Given a getTeams function", () => {
   describe("When it is called", () => {
@@ -137,6 +142,24 @@ describe("Given a deleteTeam function", () => {
         expect(message).toBe(expectedMessage);
         expect(errorOccurred).toBe(true);
       });
+    });
+  });
+});
+
+describe("Given an getTeam function", () => {
+  describe("When it is called with a valid id", () => {
+    test("Then it should return the team from this id", async () => {
+      server.resetHandlers(...handlers);
+
+      const {
+        result: {
+          current: { getTeam },
+        },
+      } = renderHook(() => useTeams(), { wrapper: wrapper });
+
+      const expectedTeam = await getTeam(singleTeamMock.id as string);
+
+      expect(expectedTeam).toStrictEqual(singleTeamMock.id);
     });
   });
 });
