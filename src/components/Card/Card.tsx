@@ -2,7 +2,7 @@ import React from "react";
 import CardStyled from "./CardStyled";
 import { TeamsStructure } from "../../store/teams/types";
 import useTeams from "../../hooks/useTeams/useTeams";
-import { useAppDispatch } from "../../store";
+import { useAppDispatch, useAppSelector } from "../../store";
 import { deleteTeamActionCreator } from "../../store/teams/teamsSlice";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ interface CardProps {
   lazyLoading: boolean;
 }
 const Card = ({
-  team: { image, id, name, rating, type },
+  team: { image, id, name, rating, type, user },
   lazyLoading,
 }: CardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
@@ -19,6 +19,8 @@ const Card = ({
   const handleDetails = () => {
     navigate(`/detail/${id}`);
   };
+
+  const userId = useAppSelector((state) => state.userStore.id);
 
   const { deleteTeam } = useTeams();
 
@@ -31,14 +33,16 @@ const Card = ({
     <CardStyled>
       <li className="team-card" key={id}>
         <article className="team-card__container">
-          <button className="team-card__delete" onClick={handleOnDelete}>
-            <img
-              src="../images/icons/remove.svg"
-              alt="remove icon"
-              width="13"
-              height="13"
-            />
-          </button>
+          {userId === user && (
+            <button className="team-card__delete" onClick={handleOnDelete}>
+              <img
+                src="../images/icons/remove.svg"
+                alt="remove icon"
+                width="13"
+                height="13"
+              />
+            </button>
+          )}
           <button className="team-card__card" onClick={handleDetails}>
             <img
               src={image}

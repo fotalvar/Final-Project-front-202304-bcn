@@ -55,7 +55,7 @@ const DetailPage = (): React.ReactElement => {
         </li>
         <li className="detail__character">
           <img
-            src={`/images/characters/${team.character1}.webp`}
+            src={`/images/characters/${team.character4}.webp`}
             alt={team.character4}
           />
           <h2 className="detail__name">{team.character4}</h2>

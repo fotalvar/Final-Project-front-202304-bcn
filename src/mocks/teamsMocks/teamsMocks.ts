@@ -15,6 +15,7 @@ export const teamMock: TeamsStructure[] = [
     type: "Fighters",
     image:
       "https://cdn.shopify.com/s/files/1/0554/2664/6129/articles/All-Pyro-Characters-Ranked-in-Genshin-Impact.webp",
+    user: "",
   },
   {
     id: "6471d07c47109a6b3fc62df7",
@@ -28,6 +29,7 @@ export const teamMock: TeamsStructure[] = [
     rating: "S",
     type: "Explorers",
     image: "https://i.blogs.es/1d5449/x720/840_560.jpeg",
+    user: "",
   },
   {
     id: "6471d07c47109a6b3fc62df9",
@@ -42,6 +44,7 @@ export const teamMock: TeamsStructure[] = [
     type: "DPS",
     image:
       "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/02/28/Is-Cyno-worth-pulling-in-Genshin-Impact.jpg",
+    user: "",
   },
   {
     id: "6471d07c47109a6b3fc62df3",
@@ -56,6 +59,7 @@ export const teamMock: TeamsStructure[] = [
     type: "DPS",
     image:
       "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/02/28/Is-Cyno-worth-pulling-in-Genshin-Impact.jpg",
+    user: "",
   },
 ];
 
@@ -72,6 +76,7 @@ export const addTeamMock: TeamsStructure = {
   type: "DPS",
   image:
     "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2023/02/28/Is-Cyno-worth-pulling-in-Genshin-Impact.jpg",
+  user: "",
 };
 
 export const singleTeamMock: Partial<TeamsStructure> = {
@@ -111,6 +116,7 @@ export const emptyTeam: TeamsStructure = {
   rating: "",
   type: "",
   image: "",
+  user: "",
 };
 
 export const detailMock: TeamsStructure = {
@@ -126,6 +132,7 @@ export const detailMock: TeamsStructure = {
   type: "Tank",
   image:
     "https://image-cdn.essentiallysports.com/wp-content/uploads/20210324200849/WCCFgenshinimpact9.jpg?width=600",
+  user: "",
 };
 
 export const teamListMock: TeamsState = {
@@ -143,6 +150,7 @@ export const teamListMock: TeamsState = {
       type: "Fighters",
       image:
         "https://cdn.shopify.com/s/files/1/0554/2664/6129/articles/All-Pyro-Characters-Ranked-in-Genshin-Impact.webp",
+      user: "",
     },
   ],
   limit: 0,

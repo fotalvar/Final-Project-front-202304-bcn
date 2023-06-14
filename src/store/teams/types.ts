@@ -9,6 +9,21 @@ export interface TeamsStructure {
   rating: string;
   type: string;
   image: string;
+  user: string;
+}
+
+export interface TeamsStructureWithUser {
+  id: string;
+  name: string;
+  description: string;
+  character1: string;
+  character2: string;
+  character3: string;
+  character4: string;
+  rating: string;
+  type: string;
+  image: string;
+  user: string;
 }
 
 export interface SingleTeamStructure {
