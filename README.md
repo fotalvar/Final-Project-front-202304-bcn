@@ -31,4 +31,4 @@ Teams Impact offers the following features:
 
 ## Demo
 
-[Demo of Teams Impact](https://federico-otalvares-final-project-fron.netlify.app/user/login)
+[Demo of Teams Impact](https://teams-impact.netlify.app/)
